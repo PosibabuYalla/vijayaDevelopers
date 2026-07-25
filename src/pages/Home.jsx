@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronDown, CheckCircle2, Star, ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react'
+import {
+  ChevronDown, CheckCircle2, Star, ChevronLeft, ChevronRight, Plus, Minus,
+  LandPlot, Home as HomeIcon, Building2, TrendingUp, FileText, Landmark, ClipboardCheck, MapPin,
+  ShieldCheck, FileCheck, Compass, Construction, Wallet, Users, Headphones,
+} from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
 import { IMAGES, CONTACT, PROJECTS } from '../data/data'
@@ -54,14 +58,26 @@ function StatCounter({ value, suffix, label }) {
 
 /* ── SERVICES ── */
 const SERVICES = [
-  'Open Plot Development','Villa Development','Gated Communities','Investment Consulting',
-  'Documentation Support','Bank Loan Assistance','Registration Support','Site Visits',
+  { icon: LandPlot, title: 'Open Plot Development', desc: 'DTCP-approved layouts, ready to build your dream on.', image: 'greenCity', featured: true },
+  { icon: HomeIcon, title: 'Villa Development', desc: 'Contemporary villas with premium finishes.' },
+  { icon: Building2, title: 'Gated Communities', desc: 'Secure, amenity-rich planned townships.' },
+  { icon: TrendingUp, title: 'Investment Consulting', desc: 'Expert guidance to maximise your returns.' },
+  { icon: FileText, title: 'Documentation Support', desc: 'End-to-end paperwork, handled for you.' },
+  { icon: Landmark, title: 'Bank Loan Assistance', desc: 'Fast-tracked approvals with partner banks.' },
+  { icon: ClipboardCheck, title: 'Registration Support', desc: 'Smooth, transparent registration process.' },
+  { icon: MapPin, title: 'Site Visits', desc: 'Free guided visits at your convenience.' },
 ]
 
 /* ── WHY US ── */
 const WHY = [
-  'DTCP Approved','Clear Legal Docs','Prime Locations','Premium Infrastructure',
-  'High Appreciation','Transparent Pricing','Trusted Team','Customer Support',
+  { icon: ShieldCheck, title: 'DTCP Approved', desc: 'Every layout carries full government approval.', image: 'enclave', featured: true },
+  { icon: FileCheck, title: 'Clear Legal Docs', desc: 'Title-verified, dispute-free documentation.' },
+  { icon: Compass, title: 'Prime Locations', desc: 'Handpicked plots in high-growth corridors.' },
+  { icon: Construction, title: 'Premium Infrastructure', desc: 'Wide roads, drainage and underground cabling.' },
+  { icon: TrendingUp, title: 'High Appreciation', desc: '25–40% value growth across our projects.' },
+  { icon: Wallet, title: 'Transparent Pricing', desc: 'No hidden costs, ever.' },
+  { icon: Users, title: 'Trusted Team', desc: '18+ years of proven, honest service.' },
+  { icon: Headphones, title: 'Customer Support', desc: "We're with you well beyond registration." },
 ]
 
 /* ── JOURNEY ── */
@@ -94,6 +110,13 @@ const FAQS = [
 export default function Home() {
   const [testimonialIdx, setTestimonialIdx] = useState(0)
   const [openFaq, setOpenFaq] = useState(null)
+  const whyScrollRef = useRef(null)
+
+  const scrollWhy = (dir) => {
+    const el = whyScrollRef.current
+    if (!el) return
+    el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' })
+  }
 
   useEffect(() => {
     const id = setInterval(() => setTestimonialIdx((i) => (i + 1) % TESTIMONIALS.length), 6500)
@@ -112,8 +135,6 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover animate-kenburns"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(79,111,110,0.6) 0%, rgba(81,72,50,0.55) 100%)' }} />
-        {/* Surveyor frame */}
-        <div className="absolute inset-4 sm:inset-8 border border-white/20 rounded-xl2 pointer-events-none" />
 
         <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
           <Reveal>
@@ -214,37 +235,91 @@ export default function Home() {
           <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">What We Offer</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Our Services</h2>
         </Reveal>
-        <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {SERVICES.map((s, i) => (
-            <RevealItem key={s}>
-              <div className="bg-white border border-sand-beige rounded-xl2 p-5 hover:-translate-y-1 hover:shadow-md transition-all cursor-default">
-                <span className="font-label text-xs text-teal-sage mb-2 block">0{i + 1}</span>
-                <p className="font-label text-sm font-semibold text-charcoal">{s}</p>
-              </div>
+        <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[190px]">
+          {SERVICES.map((s) => (
+            <RevealItem
+              key={s.title}
+              className={s.featured ? 'sm:col-span-2 sm:row-span-2' : ''}
+            >
+              {s.featured ? (
+                <div className="group relative h-full rounded-xl3 overflow-hidden">
+                  <img
+                    src={IMAGES[s.image]}
+                    alt={s.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
+                  <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                    <div className="w-11 h-11 rounded-full bg-teal flex items-center justify-center mb-3">
+                      <s.icon size={20} className="text-white" />
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-white mb-1">{s.title}</h3>
+                    <p className="text-white/75 text-sm">{s.desc}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="h-full bg-white border border-sand-beige rounded-xl2 p-5 flex flex-col hover:-translate-y-1 hover:border-teal hover:shadow-md transition-all">
+                  <div className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center mb-3 shrink-0">
+                    <s.icon size={18} className="text-teal" />
+                  </div>
+                  <p className="font-label text-sm font-semibold text-charcoal mb-1">{s.title}</p>
+                  <p className="text-charcoal/60 text-xs leading-relaxed">{s.desc}</p>
+                </div>
+              )}
             </RevealItem>
           ))}
         </RevealGroup>
       </section>
 
       {/* ── 5. WHY US ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Reveal className="text-center mb-12">
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Why Choose Us</p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">8 Reasons to Trust Vijaya</h2>
+          <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+            <div>
+              <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Why Choose Us</p>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">8 Reasons to Trust Vijaya</h2>
+            </div>
+            <div className="hidden sm:flex gap-3">
+              <button
+                onClick={() => scrollWhy(-1)}
+                aria-label="Scroll left"
+                className="w-10 h-10 rounded-full border border-sand-beige hover:border-teal hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={() => scrollWhy(1)}
+                aria-label="Scroll right"
+                className="w-10 h-10 rounded-full border border-sand-beige hover:border-teal hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </Reveal>
-          <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {WHY.map((w, i) => (
-              <RevealItem key={w}>
-                <div className="relative bg-offwhite border border-sand-beige rounded-xl2 p-5 overflow-hidden hover:border-teal transition-colors">
-                  <span className="absolute -top-3 -right-2 font-display text-7xl font-bold text-sand-beige/60 select-none leading-none">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <p className="relative font-label text-sm font-semibold text-charcoal">{w}</p>
+        </div>
+
+        <Reveal>
+          <div
+            ref={whyScrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-4 sm:px-6 max-w-7xl mx-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
+            {WHY.map((w) => (
+              <div
+                key={w.title}
+                className="snap-start shrink-0 w-[240px] bg-offwhite border border-sand-beige rounded-xl2 p-6 hover:border-teal hover:shadow-md transition-all"
+              >
+                <div className="w-11 h-11 rounded-full bg-teal/10 flex items-center justify-center mb-4">
+                  <w.icon size={20} className="text-teal" />
                 </div>
-              </RevealItem>
+                <p className="font-label text-sm font-semibold text-charcoal mb-1.5">{w.title}</p>
+                <p className="text-charcoal/60 text-xs leading-relaxed">{w.desc}</p>
+              </div>
             ))}
-          </RevealGroup>
+          </div>
+        </Reveal>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 sm:hidden">
+          <p className="text-center text-charcoal/40 text-xs font-label mt-2">← Swipe to see more →</p>
         </div>
       </section>
 
