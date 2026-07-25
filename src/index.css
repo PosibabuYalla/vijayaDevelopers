@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal: #68A39F;
+  --teal-dark: #4F6F6E;
+  --teal-sage: #A3B8BB;
+  --sand: #AA967D;
+  --sand-beige: #D8D5C9;
+  --charcoal: #514832;
+  --offwhite: #F6F7F5;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--offwhite);
+  color: var(--charcoal);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.02em; }
+.font-label   { font-family: 'Poppins', sans-serif; }
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #68A39F, transparent);
+}
+
+.glass {
+  background: rgba(246,247,245,0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@keyframes kenburns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+.animate-kenburns { animation: kenburns 18s ease-in-out forwards; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F6F7F5; }
+::-webkit-scrollbar-thumb { background: #A3B8BB; border-radius: 3px; }
