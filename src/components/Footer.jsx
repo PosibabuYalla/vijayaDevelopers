@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, Youtube, Twitter, Mail, Phone, MapPin } from 'lucide-react'
-import { CONTACT } from '../data/data'
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react'
+import { CONTACT, SOCIAL } from '../data/data'
+import logo from '../assets/logo.png'
 
 export default function Footer() {
   return (
@@ -8,14 +9,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
         {/* Brand */}
         <div>
-          <div className="font-display text-2xl font-bold mb-1">Vijaya</div>
-          <div className="font-label text-xs tracking-widest2 uppercase text-teal-sage mb-4">Developers</div>
+          <img src={logo} alt="Vijaya Developers" className="h-30 w-auto mb-4" />
           <p className="text-white/70 text-sm leading-relaxed mb-5">
             Trusted builders of DTCP-approved open plots, premium villas and gated communities in Vijayawada since 2007.
           </p>
           <div className="flex gap-3">
-            {[Facebook, Instagram, Youtube, Twitter].map((Icon, i) => (
-              <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/10 hover:bg-teal flex items-center justify-center transition-colors">
+            {[
+              { Icon: Facebook, href: SOCIAL.facebook },
+              { Icon: Instagram, href: SOCIAL.instagram },
+              { Icon: Youtube, href: SOCIAL.youtube },
+            ].map(({ Icon, href }, i) => (
+              <a key={i} href={href} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-teal flex items-center justify-center transition-colors">
                 <Icon size={16} />
               </a>
             ))}

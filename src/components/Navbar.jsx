@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { CONTACT } from '../data/data'
+import logo from '../assets/logo.png'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -9,13 +10,13 @@ const navLinks = [
   {
     label: 'Projects',
     mega: [
-      { label: 'Current Projects', to: '/projects?status=current' },
-      { label: 'Future Projects', to: '/projects?status=future' },
-      { label: 'Completed Projects', to: '/projects?status=completed' },
+      { label: 'Current Projects', to: '/projects?status=current', status: 'current' },
+      { label: 'Future Projects', to: '/projects?status=future', status: 'future' },
+      { label: 'Completed Projects', to: '/projects?status=completed', status: 'completed' },
     ],
   },
-  { label: 'Gallery', to: '/#gallery' },
-  { label: 'Blogs', to: '/#blogs' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Blogs', to: '/blogs' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -24,6 +25,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [megaOpen, setMegaOpen] = useState(false)
   const navigate = useNavigate()
+  const location = useLocation()
+
+  const activeMegaStatus =
+    location.pathname === '/projects'
+      ? new URLSearchParams(location.search).get('status') || ''
+      : null
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -46,19 +53,8 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex flex-col leading-none">
-            <span
-              className="font-display text-xl font-bold"
-              style={{ color: scrolled ? '#514832' : '#fff' }}
-            >
-              Vijaya
-            </span>
-            <span
-              className="font-label text-xs tracking-widest2 uppercase"
-              style={{ color: scrolled ? '#68A39F' : '#A3B8BB' }}
-            >
-              Developers
-            </span>
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="Vijaya Developers" className="h-20 sm:h-24 w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -86,7 +82,11 @@ export default function Navbar() {
                         <button
                           key={item.label}
                           onClick={() => handleMegaNav(item.to)}
-                          className="block w-full text-left px-4 py-2 font-label text-sm text-charcoal hover:bg-offwhite hover:text-teal transition-colors"
+                          className={`block w-full text-left px-4 py-2 font-label text-sm transition-colors ${
+                            activeMegaStatus === item.status
+                              ? 'text-teal font-semibold bg-offwhite'
+                              : 'text-charcoal hover:bg-offwhite hover:text-teal'
+                          }`}
                         >
                           {item.label}
                         </button>
@@ -139,7 +139,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] bg-charcoal flex flex-col p-8">
           <div className="flex justify-between items-center mb-10">
-            <span className="font-display text-2xl text-white font-bold">Vijaya Developers</span>
+            <img src={logo} alt="Vijaya Developers" className="h-16 w-auto" />
             <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
               <X size={28} color="#fff" />
             </button>
@@ -155,7 +155,11 @@ export default function Navbar() {
                     <button
                       key={item.label}
                       onClick={() => handleMegaNav(item.to)}
-                      className="block font-label text-lg text-white/80 hover:text-white mb-1 pl-2"
+                      className={`block font-label text-lg mb-1 pl-2 ${
+                        activeMegaStatus === item.status
+                          ? 'text-teal-sage font-semibold'
+                          : 'text-white/80 hover:text-white'
+                      }`}
                     >
                       {item.label}
                     </button>

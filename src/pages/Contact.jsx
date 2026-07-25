@@ -39,7 +39,7 @@ export default function Contact() {
               { icon: MapPin, title: 'Visit Us', content: CONTACT.address },
               { icon: Phone, title: 'Call Us', content: CONTACT.phone, href: CONTACT.tel },
               { icon: Mail, title: 'Email Us', content: CONTACT.email, href: `mailto:${CONTACT.email}` },
-              { icon: Clock, title: 'Working Hours', content: 'Monday – Saturday: 9:30 AM – 7:00 PM' },
+              { icon: Clock, title: 'Working Hours', content: CONTACT.hours },
             ].map(({ icon: Icon, title, content, href }) => (
               <Reveal key={title}>
                 <div className="flex gap-4 bg-white border border-sand-beige rounded-xl2 p-5">
@@ -63,8 +63,8 @@ export default function Contact() {
               <div className="rounded-xl2 overflow-hidden border border-sand-beige h-48 bg-sand-beige/30 flex items-center justify-center">
                 <div className="text-center text-charcoal/40">
                   <MapPin size={32} className="mx-auto mb-2" />
-                  <p className="font-label text-sm">40-1-12, M.G. Road, Labbipet</p>
-                  <p className="font-label text-xs">Vijayawada, AP 520010</p>
+                  <p className="font-label text-sm">1st Floor, 11th Line, Currency Nagar</p>
+                  <p className="font-label text-xs">Ramavarappadu, Vijayawada, AP 520008</p>
                 </div>
               </div>
             </Reveal>

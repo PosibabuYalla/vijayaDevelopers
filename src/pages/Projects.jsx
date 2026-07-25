@@ -49,7 +49,7 @@ export default function Projects() {
           ))}
         </Reveal>
 
-        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <RevealGroup key={activeStatus} className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filtered.map((p) => (
             <RevealItem key={p.slug}>
               <ProjectCard project={p} />
