@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
-import { IMAGES, PROGRAMS } from '../data/data'
+import ImageLightbox from '../components/ImageLightbox'
+import { IMAGES, PROGRAMS, DONATION_IMAGES } from '../data/data'
 
 export default function Programs() {
   const seva = PROGRAMS.find((p) => p.title === 'Seva')
   const others = PROGRAMS.filter((p) => p.title !== 'Seva')
+  const [openIndex, setOpenIndex] = useState(null)
 
   return (
     <div>
@@ -81,6 +84,38 @@ export default function Programs() {
           ))}
         </RevealGroup>
       </section>
+
+      {/* Donations Gallery */}
+      <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6">
+        <Reveal className="text-center mb-10">
+          <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Seva in Action</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Donation Drives</h2>
+        </Reveal>
+        <RevealGroup className="columns-2 sm:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
+          {DONATION_IMAGES.map((src, i) => (
+            <RevealItem key={i} className="mb-4 break-inside-avoid">
+              <button
+                onClick={() => setOpenIndex(i)}
+                className="group relative block w-full rounded-xl2 overflow-hidden border border-sand-beige"
+              >
+                <img
+                  src={src}
+                  alt={`Donation drive photo ${i + 1}`}
+                  loading="lazy"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </button>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </section>
+      <ImageLightbox
+        images={DONATION_IMAGES}
+        index={openIndex}
+        onClose={() => setOpenIndex(null)}
+        onPrev={() => setOpenIndex((i) => (i - 1 + DONATION_IMAGES.length) % DONATION_IMAGES.length)}
+        onNext={() => setOpenIndex((i) => (i + 1) % DONATION_IMAGES.length)}
+      />
 
       {/* CTA */}
       <section className="relative py-24 overflow-hidden">

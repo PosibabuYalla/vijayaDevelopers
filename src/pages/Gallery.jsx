@@ -1,7 +1,14 @@
 import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
-import { IMAGES, GALLERY } from '../data/data'
+import ZigzagGallery from '../components/ZigzagGallery'
+import { IMAGES, GALLERY, CONSTRUCTION_IMAGES, CLIENT_DISCUSSION_IMAGES, TREKKING_IMAGES } from '../data/data'
+
+const ZIGZAG_SECTIONS = [
+  { title: 'Constructions', subtitle: 'Progress on the Ground', images: CONSTRUCTION_IMAGES, columns: 2 },
+  { title: 'Client Discussions', subtitle: 'Building Relationships', images: CLIENT_DISCUSSION_IMAGES, columns: 3 },
+  { title: 'Treakings', subtitle: 'Team Adventures', images: TREKKING_IMAGES, columns: 2 },
+]
 
 const CATEGORIES = ['All', ...Array.from(new Set(GALLERY.map((g) => g.category)))]
 
@@ -71,6 +78,19 @@ export default function Gallery() {
           ))}
         </RevealGroup>
       </section>
+
+      {/* Zig-zag category galleries */}
+      {ZIGZAG_SECTIONS.map((s) => (
+        <section key={s.title} className="py-14 max-w-7xl mx-auto px-4 sm:px-6">
+          <Reveal className="text-center mb-10">
+            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">{s.subtitle}</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">{s.title}</h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <ZigzagGallery images={s.images} columns={s.columns} />
+          </Reveal>
+        </section>
+      ))}
 
       {/* Lightbox */}
       {lightboxIdx !== null && (

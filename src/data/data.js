@@ -1,5 +1,20 @@
 import { Church, Handshake, ShieldCheck, HandHeart } from 'lucide-react'
 
+function naturalSort(a, b) {
+  const numA = parseInt((a.match(/(\d+)(?!.*\d)/) || [0])[0], 10)
+  const numB = parseInt((b.match(/(\d+)(?!.*\d)/) || [0])[0], 10)
+  return numA - numB
+}
+
+function loadImages(globResult) {
+  return Object.keys(globResult).sort(naturalSort).map((key) => globResult[key])
+}
+
+export const DONATION_IMAGES = loadImages(import.meta.glob('../assets/Donations/*.jpeg', { eager: true, import: 'default' }))
+export const CONSTRUCTION_IMAGES = loadImages(import.meta.glob('../assets/Constructions/*.jpeg', { eager: true, import: 'default' }))
+export const CLIENT_DISCUSSION_IMAGES = loadImages(import.meta.glob('../assets/ClientDiscussions/*.jpeg', { eager: true, import: 'default' }))
+export const TREKKING_IMAGES = loadImages(import.meta.glob('../assets/Treakings/*.jpeg', { eager: true, import: 'default' }))
+
 export const IMAGES = {
   hero:      'https://media.base44.com/images/public/6a64eeb899fbb45e892de8cb/cf93a377e_generated_64cc84eb.png',
   about:     'https://media.base44.com/images/public/6a64eeb899fbb45e892de8cb/3c70627db_generated_43e76a3a.png',
