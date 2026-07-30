@@ -51,13 +51,13 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'glass shadow-sm py-2' : 'bg-transparent py-4'
+          scrolled ? 'glass shadow-sm py-0.5' : 'bg-transparent py-1'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Vijaya Developers" className="h-20 sm:h-24 w-auto" />
+            <img src={logo} alt="Vijaya Developers" className="h-24 sm:h-28 w-auto" />
           </Link>
 
           {/* Desktop nav */}

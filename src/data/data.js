@@ -25,14 +25,14 @@ export const PROGRAMS = [
   {
     icon: Handshake,
     title: 'Bharosa',
-    desc: 'Our promise of trust in every relationship.',
-    items: ['Customer Trust', 'Long-Term Relationship', 'Honest Commitments', 'Transparent Communication'],
+    desc: 'Our promise of trust to the communities and villages we work alongside — not just our customers.',
+    items: ['Fair Dealings with Local Landowners', 'Honest Commitments to the Community', 'Long-Term Village Relationships', 'Transparent Communication with Society'],
   },
   {
     icon: ShieldCheck,
     title: 'Suraksha',
-    desc: 'Keeping every investment safe and secure.',
-    items: ['Secure Documentation', 'Legal Verification', 'Safe Investment', 'Protected Registration Process'],
+    desc: 'Standing for the safety and wellbeing of the wider community, not only our projects.',
+    items: ['Community Safety Awareness Camps', 'Support During Natural Calamities', 'Health & Safety Camps for Villagers', 'Protecting Local Livelihoods'],
   },
 ]
 
