@@ -66,7 +66,7 @@ export default function Navbar() {
               link.mega ? (
                 <div
                   key={link.label}
-                  className="relative"
+                  className="relative pb-3 -mb-3"
                   onMouseEnter={() => setMegaOpen(true)}
                   onMouseLeave={() => setMegaOpen(false)}
                 >
@@ -89,7 +89,7 @@ export default function Navbar() {
                   </NavLink>
                   {megaOpen && (
                     <div
-                      className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl2 shadow-lg border border-sand-beige py-2"
+                      className="absolute top-full left-0 w-52 bg-white rounded-xl2 shadow-lg border border-sand-beige py-2"
                       onMouseEnter={() => setMegaOpen(true)}
                       onMouseLeave={() => setMegaOpen(false)}
                     >
