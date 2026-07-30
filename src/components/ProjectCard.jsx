@@ -4,7 +4,7 @@ import { IMAGES } from '../data/data'
 
 const STATUS_STYLES = {
   current:   { label: 'Available Now', bg: 'bg-teal text-white' },
-  future:    { label: 'Launching Soon', bg: 'bg-sand text-white' },
+  future:    { label: 'New Launch', bg: 'bg-sand text-white' },
   completed: { label: 'Sold Out', bg: 'bg-charcoal text-white' },
 }
 

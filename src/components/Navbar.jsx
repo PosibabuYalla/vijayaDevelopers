@@ -9,12 +9,15 @@ const navLinks = [
   { label: 'About', to: '/about' },
   {
     label: 'Projects',
+    to: '/projects',
     mega: [
+      { label: 'All Projects', to: '/projects', status: '' },
       { label: 'Current Projects', to: '/projects?status=current', status: 'current' },
       { label: 'Future Projects', to: '/projects?status=future', status: 'future' },
       { label: 'Completed Projects', to: '/projects?status=completed', status: 'completed' },
     ],
   },
+  { label: 'Our Programs', to: '/programs' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Blogs', to: '/blogs' },
   { label: 'Contact', to: '/contact' },
@@ -61,17 +64,29 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) =>
               link.mega ? (
-                <div key={link.label} className="relative">
-                  <button
-                    className={`flex items-center gap-1 font-label text-sm font-medium transition-colors ${
-                      scrolled ? 'text-charcoal hover:text-teal' : 'text-white/90 hover:text-white'
-                    }`}
-                    onMouseEnter={() => setMegaOpen(true)}
-                    onMouseLeave={() => setMegaOpen(false)}
-                    onClick={() => setMegaOpen((v) => !v)}
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setMegaOpen(true)}
+                  onMouseLeave={() => setMegaOpen(false)}
+                >
+                  <NavLink
+                    to={link.to}
+                    onClick={() => setMegaOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 font-label text-sm font-medium transition-colors ${
+                        scrolled
+                          ? isActive
+                            ? 'text-teal'
+                            : 'text-charcoal hover:text-teal'
+                          : isActive
+                          ? 'text-white'
+                          : 'text-white/90 hover:text-white'
+                      }`
+                    }
                   >
                     {link.label} <ChevronDown size={14} />
-                  </button>
+                  </NavLink>
                   {megaOpen && (
                     <div
                       className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl2 shadow-lg border border-sand-beige py-2"
@@ -148,9 +163,12 @@ export default function Navbar() {
             {navLinks.map((link) =>
               link.mega ? (
                 <div key={link.label}>
-                  <p className="font-label text-teal-sage text-xs uppercase tracking-widest2 mb-2">
+                  <button
+                    onClick={() => handleMegaNav(link.to)}
+                    className="font-display text-2xl text-white hover:text-teal-sage transition-colors mb-2 text-left"
+                  >
                     {link.label}
-                  </p>
+                  </button>
                   {link.mega.map((item) => (
                     <button
                       key={item.label}

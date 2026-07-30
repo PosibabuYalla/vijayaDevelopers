@@ -1,21 +1,21 @@
 import { useParams, Link } from 'react-router-dom'
-import { CheckCircle2, Phone, MessageCircle, FileText, ArrowLeft, MapPin } from 'lucide-react'
+import { CheckCircle2, Phone, MessageCircle, FileText, ArrowLeft, MapPin, School, Hospital, GraduationCap, Plane, TrainFront, Route } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT, PROJECTS } from '../data/data'
 
 const STATUS_STYLES = {
   current:   { label: 'Available Now', bg: 'bg-teal text-white' },
-  future:    { label: 'Launching Soon', bg: 'bg-sand text-white' },
+  future:    { label: 'New Launch', bg: 'bg-sand text-white' },
   completed: { label: 'Sold Out', bg: 'bg-charcoal text-white' },
 }
 
 const LOCATION_TILES = [
-  { icon: '🏫', label: 'Schools', dist: '2 km' },
-  { icon: '🏥', label: 'Hospitals', dist: '3 km' },
-  { icon: '🎓', label: 'Colleges', dist: '5 km' },
-  { icon: '✈️', label: 'Airport', dist: '8 km' },
-  { icon: '🚂', label: 'Railway', dist: '12 km' },
-  { icon: '🛣️', label: 'Highway', dist: '1 km' },
+  { icon: School, label: 'Schools', dist: '2 km' },
+  { icon: Hospital, label: 'Hospitals', dist: '3 km' },
+  { icon: GraduationCap, label: 'Colleges', dist: '5 km' },
+  { icon: Plane, label: 'Airport', dist: '8 km' },
+  { icon: TrainFront, label: 'Railway', dist: '12 km' },
+  { icon: Route, label: 'Highway', dist: '1 km' },
 ]
 
 export default function ProjectDetail() {
@@ -140,7 +140,7 @@ export default function ProjectDetail() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {LOCATION_TILES.map((t) => (
                   <div key={t.label} className="bg-white border border-sand-beige rounded-xl2 p-4 text-center">
-                    <div className="text-2xl mb-1">{t.icon}</div>
+                    <t.icon size={22} className="text-teal mx-auto mb-1" />
                     <div className="font-label text-sm font-semibold text-charcoal">{t.label}</div>
                     <div className="text-xs text-teal font-label">{t.dist}</div>
                   </div>

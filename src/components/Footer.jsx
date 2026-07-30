@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react'
-import { CONTACT, SOCIAL } from '../data/data'
+import { CONTACT, SOCIAL, PROJECTS } from '../data/data'
 import logo from '../assets/logo.png'
 
 export default function Footer() {
@@ -30,9 +30,17 @@ export default function Footer() {
         <div>
           <h4 className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-4">Company</h4>
           <ul className="space-y-2 text-sm text-white/70">
-            {['Home','About Us','Projects','Gallery','Blogs','Contact'].map((l) => (
+            {[
+              ['Home', '/'],
+              ['About Us', '/about'],
+              ['Projects', '/projects'],
+              ['Our Programs', '/programs'],
+              ['Gallery', '/gallery'],
+              ['Blogs', '/blogs'],
+              ['Contact', '/contact'],
+            ].map(([l, to]) => (
               <li key={l}>
-                <Link to={l === 'Home' ? '/' : `/${l.toLowerCase().replace(' ','')}`} className="hover:text-white transition-colors">
+                <Link to={to} className="hover:text-white transition-colors">
                   {l}
                 </Link>
               </li>
@@ -44,14 +52,9 @@ export default function Footer() {
         <div>
           <h4 className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-4">Projects</h4>
           <ul className="space-y-2 text-sm text-white/70">
-            {[
-              ['Vijaya Green City', '/projects/vijaya-green-city'],
-              ['Vijaya Villas', '/projects/vijaya-villas'],
-              ['Vijaya Enclave', '/projects/vijaya-enclave'],
-              ['Vijaya Spring Fields', '/projects/vijaya-spring-fields'],
-            ].map(([name, to]) => (
-              <li key={name}>
-                <Link to={to} className="hover:text-white transition-colors">{name}</Link>
+            {PROJECTS.map((p) => (
+              <li key={p.slug}>
+                <Link to={`/projects/${p.slug}`} className="hover:text-white transition-colors">{p.name}</Link>
               </li>
             ))}
           </ul>

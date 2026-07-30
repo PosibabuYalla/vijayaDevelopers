@@ -4,10 +4,24 @@ import {
   ChevronDown, CheckCircle2, Star, ChevronLeft, ChevronRight, Plus, Minus,
   LandPlot, Home as HomeIcon, Building2, TrendingUp, FileText, Landmark, ClipboardCheck, MapPin,
   ShieldCheck, FileCheck, Compass, Construction, Wallet, Users, Headphones,
+  Phone, MessageCircle, Route, TreePine,
 } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
-import { IMAGES, CONTACT, PROJECTS } from '../data/data'
+import { IMAGES, CONTACT, PROJECTS, PRICING, PROGRAMS } from '../data/data'
+
+const BROCHURE_WHATSAPP = `${CONTACT.whatsapp}?text=${encodeURIComponent('Hi, I would like to download the project brochure.')}`
+
+const HERO_HIGHLIGHTS = [
+  'Expert Land Investment Company',
+  'Premium Gated Communities',
+  '100% Legal Verification',
+  'Bank Loan Assistance',
+  'Secure Registration',
+  'Trusted by Hundreds of Families',
+]
+
+const PROJECT_LOCATIONS = ['Kesarapalli · Gannavaram', 'Ramavarappadu', 'Gandigunta Village', 'Kondapavuluru Village']
 
 /* ── TRUST STATS ── */
 function useCountUp(target, active) {
@@ -144,16 +158,26 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-              Invest in Tomorrow.<br />Own Premium Open Plots.
+              Invest in Tomorrow.<br />Own Premium Open Plots &amp; Villas.
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-white/80 text-lg mb-3 max-w-xl mx-auto">
               18+ years of trust. DTCP-approved gated communities, premium villas and open plots in Vijayawada's fastest-growing corridors.
             </p>
           </Reveal>
+          <Reveal delay={0.25}>
+            <p className="font-label text-sm font-semibold text-teal-sage mb-2">
+              Open Plots from {PRICING.openPlotGannavaram} · Villas from {PRICING.villaStarting}
+            </p>
+          </Reveal>
+          <Reveal delay={0.28}>
+            <p className="text-white/60 text-xs font-label uppercase tracking-widest2 mb-8">
+              {PROJECT_LOCATIONS.join(' · ')}
+            </p>
+          </Reveal>
           <Reveal delay={0.3}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 to="/projects"
                 className="px-8 py-3 rounded-full bg-white text-charcoal font-label font-semibold hover:bg-offwhite transition-colors"
@@ -168,6 +192,23 @@ export default function Home() {
               >
                 Book Site Visit
               </a>
+              <a
+                href={BROCHURE_WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-3 rounded-full border border-white/50 text-white font-label font-semibold backdrop-blur-sm hover:bg-white/10 transition-colors"
+              >
+                Download Brochure
+              </a>
+            </div>
+          </Reveal>
+          <Reveal delay={0.35}>
+            <div className="flex flex-wrap gap-2 justify-center max-w-2xl mx-auto">
+              {HERO_HIGHLIGHTS.map((h) => (
+                <span key={h} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-xs font-label backdrop-blur-sm">
+                  <CheckCircle2 size={12} className="text-teal-sage shrink-0" /> {h}
+                </span>
+              ))}
             </div>
           </Reveal>
         </div>
@@ -359,14 +400,14 @@ export default function Home() {
           </Reveal>
           <RevealGroup className="grid grid-cols-2 gap-4">
             {[
-              { icon: '📈', title: 'Consistent Appreciation', desc: '25–40% appreciation in 3 years across our projects.' },
-              { icon: '🏗️', title: 'Growth Corridors', desc: 'Plots near Amaravati, Gannavaram and Nandigama Road.' },
-              { icon: '🛣️', title: 'Connectivity', desc: 'NH-16, airport, railway and expressway access.' },
-              { icon: '🌳', title: 'Infrastructure Development', desc: 'Wide roads, underground cabling, parks and security.' },
+              { icon: TrendingUp, title: 'Consistent Appreciation', desc: '25–40% appreciation in 3 years across our projects.' },
+              { icon: Construction, title: 'Growth Corridors', desc: 'Plots near Amaravati, Gannavaram, Gandigunta and Kondapavuluru.' },
+              { icon: Route, title: 'Connectivity', desc: 'NH-16, airport, railway and expressway access.' },
+              { icon: TreePine, title: 'Infrastructure Development', desc: 'Wide roads, underground cabling, parks and security.' },
             ].map((b) => (
               <RevealItem key={b.title}>
                 <div className="bg-white/10 border border-white/10 rounded-xl2 p-5 hover:bg-white/15 transition-colors">
-                  <div className="text-2xl mb-2">{b.icon}</div>
+                  <b.icon size={22} className="text-teal-sage mb-2" />
                   <h4 className="font-label text-sm font-semibold text-white mb-1">{b.title}</h4>
                   <p className="text-white/60 text-xs">{b.desc}</p>
                 </div>
@@ -398,6 +439,46 @@ export default function Home() {
             </RevealItem>
           ))}
         </RevealGroup>
+      </section>
+
+      {/* ── 8.5 OUR PROGRAMS ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-4 text-center sm:text-left">
+            <div>
+              <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">More Than Business</p>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Our Programs</h2>
+            </div>
+            <Link to="/programs" className="font-label text-sm font-semibold text-teal hover:text-teal-dark flex items-center gap-1 justify-center sm:justify-start">
+              View All Programs →
+            </Link>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <p className="text-charcoal/60 text-sm max-w-2xl mb-10">
+              Beyond plots and villas, we show up for our community — through spiritual traditions, selfless seva like blanket and food distribution, and an unwavering commitment to trust and safety. Not for business. Simply because it matters.
+            </p>
+          </Reveal>
+          <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PROGRAMS.map((p) => (
+              <RevealItem key={p.title}>
+                <div className="h-full bg-offwhite border border-sand-beige rounded-xl3 p-7 hover:border-teal hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center mb-3">
+                    <p.icon size={22} className="text-teal" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-charcoal mb-1">{p.title}</h3>
+                  <p className="text-charcoal/60 text-sm mb-4">{p.desc}</p>
+                  <ul className="space-y-2">
+                    {p.items.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-charcoal/80">
+                        <CheckCircle2 size={14} className="text-teal shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </div>
       </section>
 
       {/* ── 9. TESTIMONIALS ── */}
@@ -470,11 +551,11 @@ export default function Home() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">Book Your Free Site Visit Today.</h2>
             <p className="text-white/75 mb-8">Experience the plots in person. Our team will guide you through every detail.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={CONTACT.tel} className="px-7 py-3 rounded-full bg-white text-charcoal font-label font-semibold hover:bg-offwhite transition-colors">
-                📞 Call Us
+              <a href={CONTACT.tel} className="flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-white text-charcoal font-label font-semibold hover:bg-offwhite transition-colors">
+                <Phone size={16} /> Call Us
               </a>
-              <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="px-7 py-3 rounded-full bg-green-500 text-white font-label font-semibold hover:bg-green-600 transition-colors">
-                💬 WhatsApp
+              <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-green-500 text-white font-label font-semibold hover:bg-green-600 transition-colors">
+                <MessageCircle size={16} /> WhatsApp
               </a>
               <Link to="/contact" className="px-7 py-3 rounded-full border border-white/50 text-white font-label font-semibold hover:bg-white/10 transition-colors">
                 Contact Us
