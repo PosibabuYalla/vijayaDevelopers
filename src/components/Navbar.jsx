@@ -77,8 +77,8 @@ export default function Navbar() {
                       `flex items-center gap-1 font-label text-sm font-medium transition-colors ${
                         scrolled
                           ? isActive
-                            ? 'text-teal'
-                            : 'text-charcoal hover:text-teal'
+                            ? 'text-gradient'
+                            : 'text-charcoal hover:text-gradient'
                           : isActive
                           ? 'text-white'
                           : 'text-white/90 hover:text-white'
@@ -99,8 +99,8 @@ export default function Navbar() {
                           onClick={() => handleMegaNav(item.to)}
                           className={`block w-full text-left px-4 py-2 font-label text-sm transition-colors ${
                             activeMegaStatus === item.status
-                              ? 'text-teal font-semibold bg-offwhite'
-                              : 'text-charcoal hover:bg-offwhite hover:text-teal'
+                              ? 'text-gradient font-semibold bg-offwhite'
+                              : 'text-charcoal hover:bg-offwhite hover:text-gradient'
                           }`}
                         >
                           {item.label}
@@ -117,8 +117,8 @@ export default function Navbar() {
                     `font-label text-sm font-medium transition-colors ${
                       scrolled
                         ? isActive
-                          ? 'text-teal'
-                          : 'text-charcoal hover:text-teal'
+                          ? 'text-gradient'
+                          : 'text-charcoal hover:text-gradient'
                         : isActive
                         ? 'text-white'
                         : 'text-white/90 hover:text-white'
@@ -133,7 +133,7 @@ export default function Navbar() {
               href={CONTACT.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="ml-2 px-5 py-2 rounded-full font-label text-sm font-semibold bg-teal text-white hover:bg-teal-dark transition-colors"
+              className="ml-2 px-5 py-2 rounded-full font-label text-sm font-semibold bg-gradient-brand text-white hover:bg-gradient-brand-dark transition-colors"
             >
               Book Site Visit
             </a>
@@ -145,7 +145,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
-            <Menu size={24} color={scrolled ? '#514832' : '#fff'} />
+            <Menu size={24} color={scrolled ? '#1B2430' : '#fff'} />
           </button>
         </div>
       </header>
@@ -165,7 +165,7 @@ export default function Navbar() {
                 <div key={link.label}>
                   <button
                     onClick={() => handleMegaNav(link.to)}
-                    className="font-display text-2xl text-white hover:text-teal-sage transition-colors mb-2 text-left"
+                    className="font-display text-2xl text-white hover:text-gradient-light transition-colors mb-2 text-left"
                   >
                     {link.label}
                   </button>
@@ -175,7 +175,7 @@ export default function Navbar() {
                       onClick={() => handleMegaNav(item.to)}
                       className={`block font-label text-lg mb-1 pl-2 ${
                         activeMegaStatus === item.status
-                          ? 'text-teal-sage font-semibold'
+                          ? 'text-gradient-light font-semibold'
                           : 'text-white/80 hover:text-white'
                       }`}
                     >
@@ -188,7 +188,7 @@ export default function Navbar() {
                   key={link.label}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className="font-display text-2xl text-white hover:text-teal-sage transition-colors"
+                  className="font-display text-2xl text-white hover:text-gradient-light transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -200,7 +200,7 @@ export default function Navbar() {
               href={CONTACT.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="block text-center px-6 py-3 rounded-full bg-teal text-white font-label font-semibold text-base"
+              className="block text-center px-6 py-3 rounded-full bg-gradient-brand text-white font-label font-semibold text-base"
             >
               Book Site Visit
             </a>

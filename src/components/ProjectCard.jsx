@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import { IMAGES } from '../data/data'
 
 const STATUS_STYLES = {
-  current:   { label: 'Available Now', bg: 'bg-teal text-white' },
+  current:   { label: 'Available Now', bg: 'bg-gradient-brand text-white' },
   future:    { label: 'New Launch', bg: 'bg-sand text-white' },
   completed: { label: 'Sold Out', bg: 'bg-charcoal text-white' },
 }
@@ -29,12 +29,12 @@ export default function ProjectCard({ project }) {
           {pill.label}
         </span>
         <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-1">{location}</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-1">{location}</p>
           <h3 className="font-display text-xl font-bold mb-1">{name}</h3>
           <p className="text-white/75 text-sm mb-3 line-clamp-2">{tagline}</p>
           <div className="flex items-center justify-between">
-            <span className="font-label text-sm font-semibold text-teal-sage">{price}</span>
-            <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-teal transition-colors">
+            <span className="font-label text-sm font-semibold text-gradient-light">{price}</span>
+            <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-gradient-brand transition-colors">
               <ArrowRight size={14} />
             </span>
           </div>

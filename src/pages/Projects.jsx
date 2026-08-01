@@ -24,9 +24,9 @@ export default function Projects() {
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
         <img src={IMAGES.enclave} alt="Projects" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(79,111,110,0.65)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">Portfolio</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Portfolio</p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold">Our Projects</h1>
         </div>
       </section>
@@ -40,8 +40,8 @@ export default function Projects() {
               onClick={() => setSearchParams(f.value ? { status: f.value } : {})}
               className={`px-5 py-2 rounded-full font-label text-sm font-semibold border transition-colors ${
                 activeStatus === f.value
-                  ? 'bg-teal text-white border-teal'
-                  : 'bg-white text-charcoal border-sand-beige hover:border-teal'
+                  ? 'bg-gradient-brand text-white border-transparent'
+                  : 'bg-white text-charcoal border-sand-beige hover:border-gradient-brand'
               }`}
             >
               {f.label}

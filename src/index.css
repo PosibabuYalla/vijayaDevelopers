@@ -3,13 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --teal: #68A39F;
-  --teal-dark: #4F6F6E;
-  --teal-sage: #A3B8BB;
-  --sand: #AA967D;
-  --sand-beige: #D8D5C9;
-  --charcoal: #514832;
-  --offwhite: #F6F7F5;
+  --teal: #FF6300;
+  --teal-dark: #E65900;
+  --teal-sage: #FF6300;
+  --sand: #FF6300;
+  --sand-hover: #E65900;
+  --sand-light: #FF8A3D;
+  --sand-beige: #E5EAF1;
+  --charcoal: #1B2430;
+  --offwhite: #FAFBFC;
+  --surface: #F5F7FA;
+}
+
+@layer utilities {
+  .bg-gradient-brand {
+    background-color: var(--sand);
+    background-image: none;
+  }
+  .bg-gradient-brand-dark {
+    background-color: var(--sand-hover);
+    background-image: none;
+  }
+  .text-gradient {
+    background-image: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--sand);
+  }
+  .text-gradient-dark {
+    background-image: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--sand-hover);
+  }
+  .text-gradient-light {
+    background-image: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--sand-light);
+  }
+  .border-gradient-brand {
+    border-color: var(--sand);
+    background-image: none;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -28,11 +64,11 @@ body {
 
 .hairline {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #68A39F, transparent);
+  background: linear-gradient(90deg, transparent, var(--sand), transparent);
 }
 
 .glass {
-  background: rgba(246,247,245,0.72);
+  background: rgba(250,251,252,0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -44,5 +80,5 @@ body {
 .animate-kenburns { animation: kenburns 18s ease-in-out forwards; }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #F6F7F5; }
-::-webkit-scrollbar-thumb { background: #A3B8BB; border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }

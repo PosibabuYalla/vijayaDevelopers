@@ -5,16 +5,18 @@ export default {
     extend: {
       colors: {
         teal: {
-          DEFAULT: '#68A39F',
-          dark: '#4F6F6E',
-          sage: '#A3B8BB',
+          DEFAULT: '#FF6300',
+          dark: '#E65900',
+          sage: '#FF6300',
         },
         sand: {
-          DEFAULT: '#AA967D',
-          beige: '#D8D5C9',
+          DEFAULT: '#FF6300',
+          hover: '#E65900',
+          beige: '#E5EAF1',
         },
-        charcoal: '#514832',
-        offwhite: '#F6F7F5',
+        charcoal: '#1B2430',
+        offwhite: '#FAFBFC',
+        surface: '#F5F7FA',
       },
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],

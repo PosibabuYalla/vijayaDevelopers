@@ -28,7 +28,7 @@ export default function FloatingContact() {
         </a>
         <a
           href={CONTACT.tel}
-          className="w-12 h-12 rounded-full bg-teal hover:bg-teal-dark flex items-center justify-center shadow-lg transition-colors"
+          className="w-12 h-12 rounded-full bg-gradient-brand hover:bg-gradient-brand-dark flex items-center justify-center shadow-lg transition-colors"
           title="Call"
         >
           <Phone size={22} color="#fff" />
@@ -38,10 +38,10 @@ export default function FloatingContact() {
       {/* Mobile: sticky bottom bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-charcoal flex">
         {[
-          { icon: Phone, label: 'Call', href: CONTACT.tel, bg: '#68A39F' },
+          { icon: Phone, label: 'Call', href: CONTACT.tel, bg: '#FF6300' },
           { icon: MessageCircle, label: 'WhatsApp', href: CONTACT.whatsapp, bg: '#22c55e' },
-          { icon: MapPin, label: 'Directions', href: `https://maps.google.com/?q=${encodeURIComponent(CONTACT.address)}`, bg: '#AA967D' },
-          { icon: Calendar, label: 'Visit', href: '/contact', bg: '#4F6F6E' },
+          { icon: MapPin, label: 'Directions', href: `https://maps.google.com/?q=${encodeURIComponent(CONTACT.address)}`, bg: '#FF6300' },
+          { icon: Calendar, label: 'Visit', href: '/contact', bg: '#E65900' },
         ].map(({ icon: Icon, label, href, bg }) => (
           <a
             key={label}

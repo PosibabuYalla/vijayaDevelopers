@@ -30,9 +30,9 @@ export default function Gallery() {
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
         <img src={IMAGES.enclave} alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.65)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">A Visual Tour</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">A Visual Tour</p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold">Gallery</h1>
         </div>
       </section>
@@ -46,8 +46,8 @@ export default function Gallery() {
               onClick={() => setActiveCategory(c)}
               className={`px-5 py-2 rounded-full font-label text-sm font-semibold border transition-colors ${
                 activeCategory === c
-                  ? 'bg-teal text-white border-teal'
-                  : 'bg-white text-charcoal border-sand-beige hover:border-teal'
+                  ? 'bg-gradient-brand text-white border-transparent'
+                  : 'bg-white text-charcoal border-sand-beige hover:border-gradient-brand'
               }`}
             >
               {c}
@@ -70,7 +70,7 @@ export default function Gallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-0.5">{g.category}</p>
+                  <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-0.5">{g.category}</p>
                   <p className="font-label text-sm font-semibold">{g.caption}</p>
                 </div>
               </button>
@@ -83,7 +83,7 @@ export default function Gallery() {
       {ZIGZAG_SECTIONS.map((s) => (
         <section key={s.title} className="py-14 max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="text-center mb-10">
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">{s.subtitle}</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">{s.subtitle}</p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">{s.title}</h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -121,7 +121,7 @@ export default function Gallery() {
               className="w-full max-h-[75vh] object-contain rounded-xl2"
             />
             <div className="text-center mt-4">
-              <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-1">
+              <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-1">
                 {filtered[lightboxIdx].category}
               </p>
               <p className="font-label text-white text-sm font-semibold">{filtered[lightboxIdx].caption}</p>

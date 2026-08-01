@@ -21,9 +21,9 @@ export default function Blogs() {
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
         <img src={IMAGES.about} alt="Blogs" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.65)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">Insights & Guides</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Insights & Guides</p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold">Blogs</h1>
         </div>
       </section>
@@ -37,8 +37,8 @@ export default function Blogs() {
               onClick={() => setActiveCategory(c)}
               className={`px-5 py-2 rounded-full font-label text-sm font-semibold border transition-colors ${
                 activeCategory === c
-                  ? 'bg-teal text-white border-teal'
-                  : 'bg-white text-charcoal border-sand-beige hover:border-teal'
+                  ? 'bg-gradient-brand text-white border-transparent'
+                  : 'bg-white text-charcoal border-sand-beige hover:border-gradient-brand'
               }`}
             >
               {c}
@@ -60,7 +60,7 @@ export default function Blogs() {
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-label font-semibold bg-teal text-white">
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-label font-semibold bg-gradient-brand text-white">
                     {post.category}
                   </span>
                 </div>
@@ -70,8 +70,8 @@ export default function Blogs() {
                   </p>
                   <h3 className="font-display text-xl font-bold text-charcoal mb-2 leading-snug">{post.title}</h3>
                   <p className="text-charcoal/70 text-sm mb-4 line-clamp-3 flex-1">{post.excerpt}</p>
-                  <span className="inline-flex items-center gap-1 font-label text-sm font-semibold text-teal group-hover:text-teal-dark transition-colors">
-                    Read More <ArrowRight size={14} />
+                  <span className="inline-flex items-center gap-1 font-label text-sm font-semibold text-gradient group-hover:text-gradient-dark transition-colors">
+                    Read More <ArrowRight size={14} className="text-teal group-hover:text-teal-dark" />
                   </span>
                 </div>
               </Link>

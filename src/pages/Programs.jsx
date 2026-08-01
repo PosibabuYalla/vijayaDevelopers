@@ -15,9 +15,9 @@ export default function Programs() {
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
         <img src={IMAGES.about} alt="Our Programs" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.65)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">More Than Business</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">More Than Business</p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold">Our Programs</h1>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function Programs() {
                   <div className="w-14 h-14 rounded-full bg-teal/20 flex items-center justify-center mb-5">
                     <seva.icon size={26} className="text-teal-sage" />
                   </div>
-                  <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">Our Seva Initiative</p>
+                  <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Our Seva Initiative</p>
                   <h2 className="font-display text-2xl sm:text-3xl font-bold mb-3">{seva.title} — Selfless Service</h2>
                   <p className="text-white/70">{seva.desc}</p>
                 </div>
@@ -66,7 +66,7 @@ export default function Programs() {
         <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {others.map((p) => (
             <RevealItem key={p.title}>
-              <div className="h-full bg-white border border-sand-beige rounded-xl3 p-8 hover:border-teal hover:shadow-md transition-all">
+              <div className="h-full bg-white border border-sand-beige rounded-xl3 p-8 hover:shadow-md transition-all">
                 <div className="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center mb-4">
                   <p.icon size={26} className="text-teal" />
                 </div>
@@ -88,7 +88,7 @@ export default function Programs() {
       {/* Donations Gallery */}
       <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="text-center mb-10">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Seva in Action</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Seva in Action</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Donation Drives</h2>
         </Reveal>
         <RevealGroup className="columns-2 sm:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
@@ -120,12 +120,12 @@ export default function Programs() {
       {/* CTA */}
       <section className="relative py-24 overflow-hidden">
         <img src={IMAGES.cta} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.75)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.75)' }} />
         <div className="relative z-10 text-center text-white max-w-xl mx-auto px-4">
           <Reveal>
             <h2 className="font-display text-3xl font-bold mb-4">Kindness needs no business reason.</h2>
             <p className="text-white/75 mb-6">Get in touch to learn more about our community and humanitarian initiatives.</p>
-            <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-teal text-white font-label font-semibold hover:bg-teal-dark transition-colors">
+            <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors">
               Contact Us
             </Link>
           </Reveal>

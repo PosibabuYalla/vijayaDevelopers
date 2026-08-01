@@ -65,7 +65,7 @@ function StatCounter({ value, suffix, label }) {
       <div className="font-display text-4xl font-bold text-white mb-1">
         {count}{suffix}
       </div>
-      <div className="font-label text-xs uppercase tracking-widest2 text-teal-sage">{label}</div>
+      <div className="font-label text-xs uppercase tracking-widest2 text-gradient-light">{label}</div>
     </div>
   )
 }
@@ -148,11 +148,11 @@ export default function Home() {
           alt="Vijaya Developers aerial view"
           className="absolute inset-0 w-full h-full object-cover animate-kenburns"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(79,111,110,0.6) 0%, rgba(81,72,50,0.55) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(230,89,0,0.4) 0%, rgba(27,36,48,0.55) 100%)' }} />
 
         <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
           <Reveal>
-            <p className="font-label text-xs uppercase tracking-widest3 text-teal-sage mb-4">
+            <p className="font-label text-xs uppercase tracking-widest3 text-gradient-light mb-4">
               DTCP-Approved · Vijayawada
             </p>
           </Reveal>
@@ -167,7 +167,7 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={0.25}>
-            <p className="font-label text-sm font-semibold text-teal-sage mb-2">
+            <p className="font-label text-sm font-semibold text-gradient-light mb-2">
               Open Plots from {PRICING.openPlotGannavaram} · Villas from {PRICING.villaStarting}
             </p>
           </Reveal>
@@ -221,7 +221,7 @@ export default function Home() {
       </section>
 
       {/* ── 2. TRUST STATS ── */}
-      <section style={{ background: '#514832' }} className="py-14">
+      <section style={{ background: '#1B2430' }} className="py-14">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
           {STATS.map((s) => <StatCounter key={s.label} {...s} />)}
         </div>
@@ -235,13 +235,13 @@ export default function Home() {
               <img src={IMAGES.about} alt="About Vijaya Developers" className="w-full h-full object-cover" />
             </div>
             <div className="absolute bottom-6 right-6 bg-white rounded-xl2 shadow-lg px-5 py-4 text-center">
-              <div className="font-display text-3xl font-bold text-teal">18+</div>
+              <div className="font-display text-3xl font-bold text-gradient">18+</div>
               <div className="font-label text-xs uppercase tracking-widest2 text-charcoal">Years of Trust</div>
             </div>
           </Reveal>
           <div>
             <Reveal>
-              <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-3">About Vijaya Developers</p>
+              <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-3">About Vijaya Developers</p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal mb-5">
                 A legacy of trust, built one plot at a time.
               </h2>
@@ -260,7 +260,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.2}>
-              <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-teal text-white font-label font-semibold hover:bg-teal-dark transition-colors">
+              <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors">
                 Know More
               </Link>
             </Reveal>
@@ -273,7 +273,7 @@ export default function Home() {
       {/* ── 4. SERVICES ── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="text-center mb-12">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">What We Offer</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">What We Offer</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Our Services</h2>
         </Reveal>
         <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[190px]">
@@ -291,7 +291,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
                   <div className="relative z-10 h-full flex flex-col justify-end p-6">
-                    <div className="w-11 h-11 rounded-full bg-teal flex items-center justify-center mb-3">
+                    <div className="w-11 h-11 rounded-full bg-gradient-brand flex items-center justify-center mb-3">
                       <s.icon size={20} className="text-white" />
                     </div>
                     <h3 className="font-display text-xl font-bold text-white mb-1">{s.title}</h3>
@@ -299,7 +299,7 @@ export default function Home() {
                   </div>
                 </div>
               ) : (
-                <div className="h-full bg-white border border-sand-beige rounded-xl2 p-5 flex flex-col hover:-translate-y-1 hover:border-teal hover:shadow-md transition-all">
+                <div className="h-full bg-white border border-sand-beige rounded-xl2 p-5 flex flex-col hover:-translate-y-1 hover:shadow-md transition-all">
                   <div className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center mb-3 shrink-0">
                     <s.icon size={18} className="text-teal" />
                   </div>
@@ -317,21 +317,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <div>
-              <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Why Choose Us</p>
+              <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Why Choose Us</p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">8 Reasons to Trust Vijaya</h2>
             </div>
             <div className="hidden sm:flex gap-3">
               <button
                 onClick={() => scrollWhy(-1)}
                 aria-label="Scroll left"
-                className="w-10 h-10 rounded-full border border-sand-beige hover:border-teal hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
+                className="w-10 h-10 rounded-full border border-sand-beige hover:border-gradient-brand hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={() => scrollWhy(1)}
                 aria-label="Scroll right"
-                className="w-10 h-10 rounded-full border border-sand-beige hover:border-teal hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
+                className="w-10 h-10 rounded-full border border-sand-beige hover:border-gradient-brand hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
               >
                 <ChevronRight size={18} />
               </button>
@@ -347,7 +347,7 @@ export default function Home() {
             {WHY.map((w) => (
               <div
                 key={w.title}
-                className="snap-start shrink-0 w-[240px] bg-offwhite border border-sand-beige rounded-xl2 p-6 hover:border-teal hover:shadow-md transition-all"
+                className="snap-start shrink-0 w-[240px] bg-offwhite border border-sand-beige rounded-xl2 p-6 hover:shadow-md transition-all"
               >
                 <div className="w-11 h-11 rounded-full bg-teal/10 flex items-center justify-center mb-4">
                   <w.icon size={20} className="text-teal" />
@@ -368,10 +368,10 @@ export default function Home() {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Our Portfolio</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Our Portfolio</p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Featured Projects</h2>
           </div>
-          <Link to="/projects" className="font-label text-sm font-semibold text-teal hover:text-teal-dark flex items-center gap-1">
+          <Link to="/projects" className="font-label text-sm font-semibold text-gradient hover:text-gradient-dark flex items-center gap-1">
             View All Projects →
           </Link>
         </Reveal>
@@ -385,12 +385,12 @@ export default function Home() {
       </section>
 
       {/* ── 7. INVESTMENT BENEFITS ── */}
-      <section style={{ background: '#514832' }} className="py-20 relative overflow-hidden">
+      <section style={{ background: '#1B2430' }} className="py-20 relative overflow-hidden">
         {/* faint grid overlay */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-3">Why Invest</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-3">Why Invest</p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
               Land is the only asset that never depreciates.
             </h2>
@@ -420,14 +420,14 @@ export default function Home() {
       {/* ── 8. CUSTOMER JOURNEY ── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="text-center mb-12">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">How It Works</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">How It Works</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Your Journey to Ownership</h2>
         </Reveal>
         <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {JOURNEY.map((j, i) => (
             <RevealItem key={j.step}>
               <div className="relative text-center">
-                <div className="w-12 h-12 rounded-full bg-teal text-white font-display font-bold text-lg flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-brand text-white font-display font-bold text-lg flex items-center justify-center mx-auto mb-3">
                   {j.step}
                 </div>
                 {i < JOURNEY.length - 1 && (
@@ -446,10 +446,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-4 text-center sm:text-left">
             <div>
-              <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">More Than Business</p>
+              <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">More Than Business</p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Our Programs</h2>
             </div>
-            <Link to="/programs" className="font-label text-sm font-semibold text-teal hover:text-teal-dark flex items-center gap-1 justify-center sm:justify-start">
+            <Link to="/programs" className="font-label text-sm font-semibold text-gradient hover:text-gradient-dark flex items-center gap-1 justify-center sm:justify-start">
               View All Programs →
             </Link>
           </Reveal>
@@ -461,7 +461,7 @@ export default function Home() {
           <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {PROGRAMS.map((p) => (
               <RevealItem key={p.title}>
-                <div className="h-full bg-offwhite border border-sand-beige rounded-xl3 p-7 hover:border-teal hover:shadow-md transition-all">
+                <div className="h-full bg-offwhite border border-sand-beige rounded-xl3 p-7 hover:shadow-md transition-all">
                   <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center mb-3">
                     <p.icon size={22} className="text-teal" />
                   </div>
@@ -482,23 +482,23 @@ export default function Home() {
       </section>
 
       {/* ── 9. TESTIMONIALS ── */}
-      <section style={{ background: '#4F6F6E' }} className="py-20 relative overflow-hidden">
+      <section style={{ background: '#1B2430' }} className="py-20 relative overflow-hidden">
         <div className="absolute top-4 left-8 font-display text-[12rem] font-bold text-white/5 leading-none select-none">"</div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <Reveal>
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-8">What Our Clients Say</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-8">What Our Clients Say</p>
           </Reveal>
           <div className="min-h-[180px] flex flex-col items-center justify-center">
             <div className="flex gap-1 mb-4">
               {Array(TESTIMONIALS[testimonialIdx].rating).fill(0).map((_, i) => (
-                <Star key={i} size={16} fill="#AA967D" color="#AA967D" />
+                <Star key={i} size={16} fill="#FF6300" color="#FF6300" />
               ))}
             </div>
             <p className="font-display text-xl sm:text-2xl text-white mb-6 italic leading-relaxed">
               "{TESTIMONIALS[testimonialIdx].text}"
             </p>
             <p className="font-label text-sm font-semibold text-white">{TESTIMONIALS[testimonialIdx].name}</p>
-            <p className="font-label text-xs text-teal-sage">{TESTIMONIALS[testimonialIdx].project}</p>
+            <p className="font-label text-xs text-gradient-light">{TESTIMONIALS[testimonialIdx].project}</p>
           </div>
           <div className="flex items-center justify-center gap-4 mt-8">
             <button onClick={() => setTestimonialIdx((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)} className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
@@ -519,7 +519,7 @@ export default function Home() {
       {/* ── 10. FAQ ── */}
       <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6">
         <Reveal className="text-center mb-12">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Common Questions</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Common Questions</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">Frequently Asked Questions</h2>
         </Reveal>
         <div className="space-y-3">
@@ -545,7 +545,7 @@ export default function Home() {
       {/* ── 11. FINAL CTA ── */}
       <section className="relative py-28 overflow-hidden">
         <img src={IMAGES.cta} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.75)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.75)' }} />
         <div className="relative z-10 text-center text-white max-w-2xl mx-auto px-4">
           <Reveal>
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">Book Your Free Site Visit Today.</h2>

@@ -21,9 +21,9 @@ export default function Contact() {
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
         <img src={IMAGES.cta} alt="Contact" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.7)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.7)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">Reach Us</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Reach Us</p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold">Contact Us</h1>
         </div>
       </section>
@@ -49,7 +49,7 @@ export default function Contact() {
                   <div>
                     <p className="font-label text-xs uppercase tracking-widest2 text-charcoal/50 mb-0.5">{title}</p>
                     {href ? (
-                      <a href={href} className="text-charcoal hover:text-teal transition-colors text-sm">{content}</a>
+                      <a href={href} className="text-charcoal hover:text-gradient transition-colors text-sm">{content}</a>
                     ) : (
                       <p className="text-charcoal text-sm">{content}</p>
                     )}
@@ -78,7 +78,7 @@ export default function Contact() {
                   <CheckCircle2 size={48} className="text-teal" />
                   <h3 className="font-display text-2xl font-bold text-charcoal">Thank You!</h3>
                   <p className="text-charcoal/70">We've received your enquiry. Our team will contact you within 24 hours.</p>
-                  <button onClick={() => setSubmitted(false)} className="mt-2 px-6 py-2 rounded-full bg-teal text-white font-label font-semibold hover:bg-teal-dark transition-colors">
+                  <button onClick={() => setSubmitted(false)} className="mt-2 px-6 py-2 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors">
                     Send Another
                   </button>
                 </div>
@@ -100,7 +100,7 @@ export default function Contact() {
                           onChange={handleChange}
                           placeholder={f.placeholder}
                           required
-                          className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-teal transition-colors"
+                          className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-gradient-brand transition-colors"
                         />
                       </div>
                     ))}
@@ -110,7 +110,7 @@ export default function Contact() {
                         name="interest"
                         value={form.interest}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-teal transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-gradient-brand transition-colors"
                       >
                         <option value="">Select an option</option>
                         {INTERESTS.map((i) => <option key={i} value={i}>{i}</option>)}
@@ -124,12 +124,12 @@ export default function Contact() {
                         onChange={handleChange}
                         rows={4}
                         placeholder="Tell us about your requirements..."
-                        className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-teal transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-gradient-brand transition-colors resize-none"
                       />
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-3 rounded-full bg-teal text-white font-label font-semibold hover:bg-teal-dark transition-colors"
+                      className="w-full py-3 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors"
                     >
                       Submit Enquiry
                     </button>

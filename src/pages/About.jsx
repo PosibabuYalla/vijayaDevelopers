@@ -56,9 +56,9 @@ export default function About() {
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
         <img src={IMAGES.about} alt="About" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.65)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal-sage mb-2">Our Story</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Our Story</p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold">About Vijaya Developers</h1>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function About() {
           </Reveal>
           <div>
             <Reveal>
-              <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-3">Who We Are</p>
+              <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-3">Who We Are</p>
               <h2 className="font-display text-3xl font-bold text-charcoal mb-4">
                 Building Vijayawada's future, one plot at a time.
               </h2>
@@ -102,13 +102,13 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="text-center mb-12">
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Leadership</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Leadership</p>
             <h2 className="font-display text-3xl font-bold text-charcoal">Vision, Mission &amp; Founder's Message</h2>
           </Reveal>
           <RevealGroup className="grid lg:grid-cols-2 gap-5 mb-6">
             <RevealItem>
               <div className="h-full bg-offwhite border border-sand-beige rounded-xl2 p-6">
-                <h4 className="font-label text-sm font-semibold text-teal uppercase tracking-widest2 mb-2">Our Vision</h4>
+                <h4 className="font-label text-sm font-semibold text-gradient uppercase tracking-widest2 mb-2">Our Vision</h4>
                 <p className="text-charcoal/70 text-sm">
                   To be Andhra Pradesh's most trusted land investment company — transforming Vijayawada's growth corridors into thriving, legally secure communities where every family's investment is protected.
                 </p>
@@ -116,7 +116,7 @@ export default function About() {
             </RevealItem>
             <RevealItem>
               <div className="h-full bg-offwhite border border-sand-beige rounded-xl2 p-6">
-                <h4 className="font-label text-sm font-semibold text-teal uppercase tracking-widest2 mb-2">Our Mission</h4>
+                <h4 className="font-label text-sm font-semibold text-gradient uppercase tracking-widest2 mb-2">Our Mission</h4>
                 <p className="text-charcoal/70 text-sm">
                   To deliver DTCP-approved, legally verified open plots and premium villas with complete transparency — guiding every customer from first enquiry through registration and beyond.
                 </p>
@@ -128,7 +128,7 @@ export default function About() {
               <p className="font-display text-lg sm:text-xl text-white italic leading-relaxed mb-4">
                 "When we started Vijaya Developers, we made one promise to ourselves — that every family who trusts us with their savings would get land that is legally clear, fairly priced, and genuinely valuable. Eighteen years and 950+ families later, that promise hasn't changed."
               </p>
-              <p className="font-label text-sm font-semibold text-teal-sage">Founder &amp; Managing Director</p>
+              <p className="font-label text-sm font-semibold text-gradient-light">Founder &amp; Managing Director</p>
               <p className="font-label text-xs text-white/50">Vijaya Developers</p>
             </div>
           </Reveal>
@@ -139,13 +139,13 @@ export default function About() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="text-center mb-12">
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Our People</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Our People</p>
             <h2 className="font-display text-3xl font-bold text-charcoal">Management Team</h2>
           </Reveal>
           <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {MANAGEMENT_TEAM.map((m) => (
               <RevealItem key={m.title}>
-                <div className="h-full bg-white border border-sand-beige rounded-xl2 p-6 hover:border-teal transition-colors">
+                <div className="h-full bg-white border border-sand-beige rounded-xl2 p-6">
                   <h4 className="font-label text-sm font-semibold text-charcoal mb-2">{m.title}</h4>
                   <p className="text-charcoal/60 text-sm">{m.desc}</p>
                 </div>
@@ -159,13 +159,13 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="text-center mb-12">
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Governance</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Governance</p>
             <h2 className="font-display text-3xl font-bold text-charcoal">Corporate Governance</h2>
           </Reveal>
           <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {GOVERNANCE.map((g) => (
               <RevealItem key={g.title}>
-                <div className="h-full bg-offwhite border border-sand-beige rounded-xl2 p-5 text-center hover:border-teal transition-colors">
+                <div className="h-full bg-offwhite border border-sand-beige rounded-xl2 p-5 text-center">
                   <h4 className="font-label text-sm font-semibold text-charcoal mb-2">{g.title}</h4>
                   <p className="text-charcoal/60 text-xs">{g.desc}</p>
                 </div>
@@ -179,7 +179,7 @@ export default function About() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Reveal className="text-center mb-12">
-            <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Due Diligence</p>
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Due Diligence</p>
             <h2 className="font-display text-3xl font-bold text-charcoal">Legal Verification Team</h2>
             <p className="text-charcoal/60 text-sm mt-3 max-w-xl mx-auto">Every project is screened by our dedicated legal verification team before it reaches a single customer.</p>
           </Reveal>
@@ -208,7 +208,7 @@ export default function About() {
           <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {VALUES.map((v) => (
               <RevealItem key={v.title}>
-                <div className="bg-offwhite border border-sand-beige rounded-xl2 p-6 text-center hover:border-teal transition-colors">
+                <div className="bg-offwhite border border-sand-beige rounded-xl2 p-6 text-center">
                   <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-3">
                     <v.icon size={22} className="text-teal" />
                   </div>
@@ -222,12 +222,12 @@ export default function About() {
       </section>
 
       {/* Stats band */}
-      <section style={{ background: '#514832' }} className="py-12">
+      <section style={{ background: '#1B2430' }} className="py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {[['18+','Years Experience'],['220+','Acres Developed'],['950+','Happy Families'],['24','Govt Approvals']].map(([v, l]) => (
             <div key={l}>
               <div className="font-display text-4xl font-bold text-white mb-1">{v}</div>
-              <div className="font-label text-xs uppercase tracking-widest2 text-teal-sage">{l}</div>
+              <div className="font-label text-xs uppercase tracking-widest2 text-gradient-light">{l}</div>
             </div>
           ))}
         </div>
@@ -236,7 +236,7 @@ export default function About() {
       {/* Timeline */}
       <section className="py-20 max-w-3xl mx-auto px-4 sm:px-6">
         <Reveal className="text-center mb-12">
-          <p className="font-label text-xs uppercase tracking-widest2 text-teal mb-2">Our Journey</p>
+          <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Our Journey</p>
           <h2 className="font-display text-3xl font-bold text-charcoal">Milestones That Define Us</h2>
         </Reveal>
         <div className="relative">
@@ -245,7 +245,7 @@ export default function About() {
             {TIMELINE.map((t, i) => (
               <Reveal key={t.year} delay={i * 0.1}>
                 <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-full bg-teal text-white font-label text-xs font-bold flex items-center justify-center shrink-0 relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-gradient-brand text-white font-label text-xs font-bold flex items-center justify-center shrink-0 relative z-10">
                     {t.year}
                   </div>
                   <div className="bg-white border border-sand-beige rounded-xl2 p-4 flex-1">
@@ -261,12 +261,12 @@ export default function About() {
       {/* CTA */}
       <section className="relative py-24 overflow-hidden">
         <img src={IMAGES.cta} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(81,72,50,0.75)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.75)' }} />
         <div className="relative z-10 text-center text-white max-w-xl mx-auto px-4">
           <Reveal>
             <h2 className="font-display text-3xl font-bold mb-4">Ready to invest in your future?</h2>
             <p className="text-white/75 mb-6">Talk to our team today and find the perfect plot or villa for you.</p>
-            <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-teal text-white font-label font-semibold hover:bg-teal-dark transition-colors">
+            <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors">
               Get in Touch
             </Link>
           </Reveal>
