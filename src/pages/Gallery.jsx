@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ZigzagGallery from '../components/ZigzagGallery'
-import { IMAGES, GALLERY, CONSTRUCTION_IMAGES, CLIENT_DISCUSSION_IMAGES, TREKKING_IMAGES } from '../data/data'
+import { GALLERY, CONSTRUCTION_IMAGES, CLIENT_DISCUSSION_IMAGES, TREKKING_IMAGES } from '../data/data'
 
 const ZIGZAG_SECTIONS = [
   { title: 'Constructions', subtitle: 'Progress on the Ground', images: CONSTRUCTION_IMAGES, columns: 2 },
@@ -29,7 +29,7 @@ export default function Gallery() {
     <div>
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={IMAGES.enclave} alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={CONSTRUCTION_IMAGES[3]} alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">A Visual Tour</p>
@@ -63,7 +63,7 @@ export default function Gallery() {
                 className="group relative block w-full rounded-xl3 overflow-hidden border border-sand-beige"
               >
                 <img
-                  src={IMAGES[g.image]}
+                  src={g.image}
                   alt={g.caption}
                   loading="lazy"
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
@@ -116,7 +116,7 @@ export default function Gallery() {
 
           <div className="max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <img
-              src={IMAGES[filtered[lightboxIdx].image]}
+              src={filtered[lightboxIdx].image}
               alt={filtered[lightboxIdx].caption}
               className="w-full max-h-[75vh] object-contain rounded-xl2"
             />

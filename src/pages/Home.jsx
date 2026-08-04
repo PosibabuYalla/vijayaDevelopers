@@ -9,6 +9,9 @@ import {
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
 import { IMAGES, CONTACT, PROJECTS, PRICING, PROGRAMS } from '../data/data'
+import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
+import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
+import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
 
 const BROCHURE_WHATSAPP = `${CONTACT.whatsapp}?text=${encodeURIComponent('Hi, I would like to download the project brochure.')}`
 
@@ -72,7 +75,7 @@ function StatCounter({ value, suffix, label }) {
 
 /* ── SERVICES ── */
 const SERVICES = [
-  { icon: LandPlot, title: 'Open Plot Development', desc: 'DTCP-approved layouts, ready to build your dream on.', image: 'greenCity', featured: true },
+  { icon: LandPlot, title: 'Open Plot Development', desc: 'DTCP & CRDA-approved layouts, ready to build your dream on.', image: openPlotLayoutImg, featured: true },
   { icon: HomeIcon, title: 'Villa Development', desc: 'Contemporary villas with premium finishes.' },
   { icon: Building2, title: 'Gated Communities', desc: 'Secure, amenity-rich planned townships.' },
   { icon: TrendingUp, title: 'Investment Consulting', desc: 'Expert guidance to maximise your returns.' },
@@ -84,7 +87,7 @@ const SERVICES = [
 
 /* ── WHY US ── */
 const WHY = [
-  { icon: ShieldCheck, title: 'DTCP Approved', desc: 'Every layout carries full government approval.', image: 'enclave', featured: true },
+  { icon: ShieldCheck, title: 'DTCP & CRDA Approved', desc: 'Every layout carries full government approval.', image: 'enclave', featured: true },
   { icon: FileCheck, title: 'Clear Legal Docs', desc: 'Title-verified, dispute-free documentation.' },
   { icon: Compass, title: 'Prime Locations', desc: 'Handpicked plots in high-growth corridors.' },
   { icon: Construction, title: 'Premium Infrastructure', desc: 'Wide roads, drainage and underground cabling.' },
@@ -113,7 +116,7 @@ const TESTIMONIALS = [
 
 /* ── FAQ ── */
 const FAQS = [
-  { q: 'Are all your projects DTCP approved?', a: 'Yes. All our current and completed projects carry full DTCP approval from the Andhra Pradesh government, ensuring legal clarity and bank loan eligibility.' },
+  { q: 'Are all your projects DTCP & CRDA approved?', a: 'Yes. All our current and completed projects carry full DTCP & CRDA approval from the Andhra Pradesh government, ensuring legal clarity and bank loan eligibility.' },
   { q: 'Can I get a bank loan for your plots?', a: 'Absolutely. Our projects are approved by leading nationalised and private banks. We assist with the entire loan documentation process at no extra charge.' },
   { q: 'Is the pricing all-inclusive?', a: 'Our quoted price per sq.yd is transparent. Registration charges, development charges and any applicable taxes are clearly communicated upfront — no hidden costs.' },
   { q: 'How do I schedule a site visit?', a: 'Simply call us, WhatsApp, or fill the contact form. We arrange free guided site visits Monday–Saturday, 9:30 AM to 7:00 PM.' },
@@ -124,25 +127,20 @@ const FAQS = [
 export default function Home() {
   const [testimonialIdx, setTestimonialIdx] = useState(0)
   const [openFaq, setOpenFaq] = useState(null)
-  const whyScrollRef = useRef(null)
-
-  const scrollWhy = (dir) => {
-    const el = whyScrollRef.current
-    if (!el) return
-    el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' })
-  }
 
   useEffect(() => {
     const id = setInterval(() => setTestimonialIdx((i) => (i + 1) % TESTIMONIALS.length), 6500)
     return () => clearInterval(id)
   }, [])
 
+  const FEATURED_IMAGES = [villaExteriorImg, openPlotLayoutImg, townhomesDuskImg]
   const featured = PROJECTS.filter((p) => p.status === 'current').slice(0, 3)
+    .map((p, i) => ({ ...p, image: FEATURED_IMAGES[i % FEATURED_IMAGES.length] }))
 
   return (
     <div>
       {/* ── 1. HERO ── */}
-      <section className="relative h-screen overflow-hidden flex items-center justify-center">
+      <section className="relative min-h-screen overflow-hidden flex items-center justify-center pt-28 pb-16">
         <img
           src={IMAGES.hero}
           alt="Vijaya Developers aerial view"
@@ -153,7 +151,7 @@ export default function Home() {
         <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
           <Reveal>
             <p className="font-label text-xs uppercase tracking-widest3 text-gradient-light mb-4">
-              DTCP-Approved · Vijayawada
+              DTCP & CRDA-Approved · Vijayawada
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -163,7 +161,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-white/80 text-lg mb-3 max-w-xl mx-auto">
-              18+ years of trust. DTCP-approved gated communities, premium villas and open plots in Vijayawada's fastest-growing corridors.
+              18+ years of trust. DTCP & CRDA-approved gated communities, premium villas and open plots in Vijayawada's fastest-growing corridors.
             </p>
           </Reveal>
           <Reveal delay={0.25}>
@@ -232,7 +230,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <Reveal className="relative">
             <div className="relative rounded-xl3 overflow-hidden" style={{ aspectRatio: '4/5' }}>
-              <img src={IMAGES.about} alt="About Vijaya Developers" className="w-full h-full object-cover" />
+              <img src={villaExteriorImg} alt="About Vijaya Developers" className="w-full h-full object-cover" />
             </div>
             <div className="absolute bottom-6 right-6 bg-white rounded-xl2 shadow-lg px-5 py-4 text-center">
               <div className="font-display text-3xl font-bold text-gradient">18+</div>
@@ -246,12 +244,12 @@ export default function Home() {
                 A legacy of trust, built one plot at a time.
               </h2>
               <p className="text-charcoal/70 mb-6">
-                Since 2007, Vijaya Developers has been transforming Vijayawada's landscape with DTCP-approved open plots, premium villas and thoughtfully planned gated communities. Our commitment to transparency, legal clarity and customer satisfaction has earned the trust of 950+ families.
+                Since 2007, Vijaya Developers has been transforming Vijayawada's landscape with DTCP & CRDA-approved open plots, premium villas and thoughtfully planned gated communities. Our commitment to transparency, legal clarity and customer satisfaction has earned the trust of 950+ families.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="grid grid-cols-2 gap-3 mb-8">
-                {['DTCP Approved Projects','Clear Legal Documentation','Prime Location Selection','Transparent Pricing','Bank Loan Assistance','18+ Years Experience','950+ Happy Families','24 Govt Approvals'].map((v) => (
+                {['DTCP & CRDA Approved Projects','Clear Legal Documentation','Prime Location Selection','Transparent Pricing','Bank Loan Assistance','18+ Years Experience','950+ Happy Families','24 Govt Approvals'].map((v) => (
                   <div key={v} className="flex items-center gap-2 text-sm text-charcoal/80">
                     <CheckCircle2 size={15} className="text-teal shrink-0" />
                     {v}
@@ -285,7 +283,7 @@ export default function Home() {
               {s.featured ? (
                 <div className="group relative h-full rounded-xl3 overflow-hidden">
                   <img
-                    src={IMAGES[s.image]}
+                    src={s.image}
                     alt={s.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -313,54 +311,26 @@ export default function Home() {
       </section>
 
       {/* ── 5. WHY US ── */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
-            <div>
-              <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Why Choose Us</p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">8 Reasons to Trust Vijaya</h2>
-            </div>
-            <div className="hidden sm:flex gap-3">
-              <button
-                onClick={() => scrollWhy(-1)}
-                aria-label="Scroll left"
-                className="w-10 h-10 rounded-full border border-sand-beige hover:border-gradient-brand hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={() => scrollWhy(1)}
-                aria-label="Scroll right"
-                className="w-10 h-10 rounded-full border border-sand-beige hover:border-gradient-brand hover:bg-teal/5 flex items-center justify-center text-charcoal transition-colors"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
+          <Reveal className="mb-10">
+            <p className="font-label text-xs uppercase tracking-widest2 text-gradient mb-2">Why Choose Us</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">8 Reasons to Trust Vijaya</h2>
           </Reveal>
-        </div>
 
-        <Reveal>
-          <div
-            ref={whyScrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-4 sm:px-6 max-w-7xl mx-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          >
+          <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {WHY.map((w) => (
-              <div
-                key={w.title}
-                className="snap-start shrink-0 w-[240px] bg-offwhite border border-sand-beige rounded-xl2 p-6 hover:shadow-md transition-all"
-              >
-                <div className="w-11 h-11 rounded-full bg-teal/10 flex items-center justify-center mb-4">
-                  <w.icon size={20} className="text-teal" />
+              <RevealItem key={w.title}>
+                <div className="h-full bg-offwhite border border-sand-beige rounded-xl2 p-6 hover:shadow-md transition-all">
+                  <div className="w-11 h-11 rounded-full bg-teal/10 flex items-center justify-center mb-4">
+                    <w.icon size={20} className="text-teal" />
+                  </div>
+                  <p className="font-label text-sm font-semibold text-charcoal mb-1.5">{w.title}</p>
+                  <p className="text-charcoal/60 text-xs leading-relaxed">{w.desc}</p>
                 </div>
-                <p className="font-label text-sm font-semibold text-charcoal mb-1.5">{w.title}</p>
-                <p className="text-charcoal/60 text-xs leading-relaxed">{w.desc}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
-        </Reveal>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 sm:hidden">
-          <p className="text-center text-charcoal/40 text-xs font-label mt-2">← Swipe to see more →</p>
+          </RevealGroup>
         </div>
       </section>
 
@@ -544,7 +514,7 @@ export default function Home() {
 
       {/* ── 11. FINAL CTA ── */}
       <section className="relative py-28 overflow-hidden">
-        <img src={IMAGES.cta} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={townhomesDuskImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.75)' }} />
         <div className="relative z-10 text-center text-white max-w-2xl mx-auto px-4">
           <Reveal>

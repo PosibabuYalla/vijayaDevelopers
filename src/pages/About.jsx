@@ -4,7 +4,7 @@ import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT } from '../data/data'
 
 const TIMELINE = [
-  { year: '2007', event: 'Founded in Vijayawada with a vision to deliver transparent, DTCP-approved real estate.' },
+  { year: '2007', event: 'Founded in Vijayawada with a vision to deliver transparent, DTCP & CRDA-approved real estate.' },
   { year: '2012', event: 'Launched our first gated community — setting a new standard for planned layouts.' },
   { year: '2017', event: 'Crossed 100+ happy families milestone across multiple projects.' },
   { year: '2022', event: 'Entered the premium villa segment with Premium Villas @ Ramavarappadu.' },
@@ -13,7 +13,7 @@ const TIMELINE = [
 
 const VALUES = [
   { icon: HeartHandshake, title: 'Integrity', desc: 'Transparent dealings, clear documentation, no hidden costs.' },
-  { icon: Scale, title: 'Legal Clarity', desc: 'Every project is DTCP-approved with clear title and survey settlement.' },
+  { icon: Scale, title: 'Legal Clarity', desc: 'Every project is DTCP & CRDA-approved with clear title and survey settlement.' },
   { icon: Leaf, title: 'Sustainability', desc: 'Green spaces, avenue plantation and eco-conscious planning.' },
   { icon: Gem, title: 'Excellence', desc: 'Premium infrastructure and quality that stands the test of time.' },
 ]
@@ -37,7 +37,7 @@ const GOVERNANCE = [
   { title: 'Ethical Business Practices', desc: 'Every deal is conducted fairly, with honesty as our foundation.' },
   { title: 'Transparency', desc: 'Clear pricing, clear documentation — no hidden terms.' },
   { title: 'Customer Commitment', desc: 'Support that continues well beyond registration.' },
-  { title: 'Compliance', desc: 'Full adherence to DTCP, RERA and local regulatory requirements.' },
+  { title: 'Compliance', desc: 'Full adherence to DTCP & CRDA, RERA and local regulatory requirements.' },
   { title: 'Professional Management', desc: 'Experienced leadership overseeing every project end-to-end.' },
 ]
 
@@ -47,7 +47,7 @@ const LEGAL_TEAM = [
   { title: 'Title Verification', desc: 'Confirming clear, disputed-free ownership on every property.' },
   { title: 'Encumbrance Check', desc: 'Verifying the property is free of loans, liens or legal claims.' },
   { title: 'Registration Support', desc: 'Coordinating with the sub-registrar office through to final registration.' },
-  { title: 'Layout Approval Verification', desc: 'Confirming DTCP / RERA approval status before any plot is sold.' },
+  { title: 'Layout Approval Verification', desc: 'Confirming DTCP & CRDA / RERA approval status before any plot is sold.' },
 ]
 
 export default function About() {
@@ -81,7 +81,7 @@ export default function About() {
                 Vijaya Developers was founded in 2007 with a singular mission: to make premium, legally clear real estate accessible to every family in Vijayawada. Over 18 years, we have developed 220+ acres across Kesarapalli (Gannavaram), Ramavarappadu and Kankipadu — with new launches now underway at Gandigunta and Kondapavuluru villages.
               </p>
               <p className="text-charcoal/70 mb-6">
-                Our projects are known for DTCP approval, clear titles, bank loan eligibility and world-class infrastructure. We don't just sell plots — we build communities where families thrive.
+                Our projects are known for DTCP & CRDA approval, clear titles, bank loan eligibility and world-class infrastructure. We don't just sell plots — we build communities where families thrive.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -118,7 +118,7 @@ export default function About() {
               <div className="h-full bg-offwhite border border-sand-beige rounded-xl2 p-6">
                 <h4 className="font-label text-sm font-semibold text-gradient uppercase tracking-widest2 mb-2">Our Mission</h4>
                 <p className="text-charcoal/70 text-sm">
-                  To deliver DTCP-approved, legally verified open plots and premium villas with complete transparency — guiding every customer from first enquiry through registration and beyond.
+                  To deliver DTCP & CRDA-approved, legally verified open plots and premium villas with complete transparency — guiding every customer from first enquiry through registration and beyond.
                 </p>
               </div>
             </RevealItem>

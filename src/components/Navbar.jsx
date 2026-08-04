@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 import { CONTACT } from '../data/data'
 import logo from '../assets/logo.png'
 
@@ -27,6 +27,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [megaOpen, setMegaOpen] = useState(false)
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -43,8 +44,13 @@ export default function Navbar() {
 
   const handleMegaNav = (to) => {
     setMegaOpen(false)
-    setMobileOpen(false)
+    closeMobileMenu()
     navigate(to)
+  }
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false)
+    setMobileProjectsOpen(false)
   }
 
   return (
@@ -152,50 +158,58 @@ export default function Navbar() {
 
       {/* Mobile fullscreen menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[100] bg-charcoal flex flex-col p-8">
-          <div className="flex justify-between items-center mb-10">
-            <img src={logo} alt="Vijaya Developers" className="h-16 w-auto" />
-            <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
-              <X size={28} color="#fff" />
+        <div className="fixed inset-0 z-[100] bg-charcoal flex flex-col overflow-y-auto p-6 sm:p-8">
+          <div className="flex justify-between items-center mb-8 shrink-0">
+            <img src={logo} alt="Vijaya Developers" className="h-14 w-auto" />
+            <button onClick={closeMobileMenu} aria-label="Close menu" className="p-1">
+              <X size={26} color="#fff" />
             </button>
           </div>
-          <nav className="flex flex-col gap-6">
+          <nav className="flex flex-col gap-1">
             {navLinks.map((link) =>
               link.mega ? (
-                <div key={link.label}>
+                <div key={link.label} className="border-b border-white/10">
                   <button
-                    onClick={() => handleMegaNav(link.to)}
-                    className="font-display text-2xl text-white hover:text-gradient-light transition-colors mb-2 text-left"
+                    onClick={() => setMobileProjectsOpen((v) => !v)}
+                    className="w-full flex items-center justify-between py-3 font-display text-xl text-white text-left"
                   >
                     {link.label}
+                    <ChevronRight
+                      size={18}
+                      className={`text-white/60 transition-transform ${mobileProjectsOpen ? 'rotate-90' : ''}`}
+                    />
                   </button>
-                  {link.mega.map((item) => (
-                    <button
-                      key={item.label}
-                      onClick={() => handleMegaNav(item.to)}
-                      className={`block font-label text-lg mb-1 pl-2 ${
-                        activeMegaStatus === item.status
-                          ? 'text-gradient-light font-semibold'
-                          : 'text-white/80 hover:text-white'
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
+                  {mobileProjectsOpen && (
+                    <div className="pb-3 flex flex-col gap-1">
+                      {link.mega.map((item) => (
+                        <button
+                          key={item.label}
+                          onClick={() => handleMegaNav(item.to)}
+                          className={`block text-left font-label text-base py-1.5 pl-3 ${
+                            activeMegaStatus === item.status
+                              ? 'text-gradient-light font-semibold'
+                              : 'text-white/70 hover:text-white'
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <Link
                   key={link.label}
                   to={link.to}
-                  onClick={() => setMobileOpen(false)}
-                  className="font-display text-2xl text-white hover:text-gradient-light transition-colors"
+                  onClick={closeMobileMenu}
+                  className="py-3 border-b border-white/10 font-display text-xl text-white hover:text-gradient-light transition-colors"
                 >
                   {link.label}
                 </Link>
               )
             )}
           </nav>
-          <div className="mt-auto">
+          <div className="pt-6 pb-2 shrink-0">
             <a
               href={CONTACT.whatsapp}
               target="_blank"

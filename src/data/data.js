@@ -1,4 +1,7 @@
 import { Church, Handshake, ShieldCheck, HandHeart } from 'lucide-react'
+import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
+import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
+import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
 
 function naturalSort(a, b) {
   const numA = parseInt((a.match(/(\d+)(?!.*\d)/) || [0])[0], 10)
@@ -67,31 +70,31 @@ export const SOCIAL = {
 }
 
 export const GALLERY = [
-  { id: 1, image: 'hero', category: 'Township', caption: 'Aerial View of Our Township' },
-  { id: 2, image: 'greenCity', category: 'Plots', caption: 'Vijaya Green City — Open Plots' },
-  { id: 3, image: 'villas', category: 'Villas', caption: 'Vijaya Villas — Exteriors' },
-  { id: 4, image: 'enclave', category: 'Plots', caption: 'Premium Open Plots — Layout Plan' },
-  { id: 5, image: 'greenCity', category: 'Amenities', caption: 'Avenue Plantation & Parks' },
-  { id: 6, image: 'villas', category: 'Villas', caption: 'Landscaped Courtyards' },
-  { id: 7, image: 'enclave', category: 'Amenities', caption: 'Gated Community Green Spine' },
-  { id: 8, image: 'about', category: 'Site Visits', caption: 'Client Consultation' },
-  { id: 9, image: 'cta', category: 'Site Visits', caption: 'Guided Site Visit' },
-  { id: 10, image: 'greenCity', category: 'Plots', caption: 'Vijaya Spring Fields — Delivered Community' },
+  { id: 1, image: CONSTRUCTION_IMAGES[0], category: 'Construction', caption: 'Construction in Progress' },
+  { id: 2, image: CONSTRUCTION_IMAGES[1], category: 'Construction', caption: 'Building the Foundations' },
+  { id: 3, image: CONSTRUCTION_IMAGES[2], category: 'Construction', caption: 'Site Development Underway' },
+  { id: 4, image: CLIENT_DISCUSSION_IMAGES[0], category: 'Client Meetings', caption: 'Client Consultation' },
+  { id: 5, image: CLIENT_DISCUSSION_IMAGES[1], category: 'Client Meetings', caption: 'Guided Site Visit' },
+  { id: 6, image: CLIENT_DISCUSSION_IMAGES[2], category: 'Client Meetings', caption: 'Discussing Project Details' },
+  { id: 7, image: DONATION_IMAGES[0], category: 'Community & Donations', caption: 'Community Donation Drive' },
+  { id: 8, image: DONATION_IMAGES[1], category: 'Community & Donations', caption: 'Seva in Action' },
+  { id: 9, image: TREKKING_IMAGES[0], category: 'Team Outings', caption: 'Team Trekking Adventure' },
+  { id: 10, image: TREKKING_IMAGES[1], category: 'Team Outings', caption: 'Building Team Bonds' },
 ]
 
 export const BLOGS = [
   {
-    slug: 'why-dtcp-approval-matters',
-    title: 'Why DTCP Approval Matters When Buying Open Plots',
+    slug: 'why-DTCP & CRDA-approval-matters',
+    title: 'Why DTCP & CRDA Approval Matters When Buying Open Plots',
     category: 'Buying Guide',
     date: '2026-06-02',
     readTime: '4 min read',
     image: 'greenCity',
-    excerpt: 'DTCP approval is the single most important checkbox before you sign on any open plot. Here\'s what it actually protects you from.',
+    excerpt: 'DTCP & CRDA approval is the single most important checkbox before you sign on any open plot. Here\'s what it actually protects you from.',
     body: [
-      'When you buy an open plot, the layout\'s approval status determines whether your investment is legally sound or a future headache. DTCP (Directorate of Town and Country Planning) approval confirms that a layout meets government-mandated standards for roads, drainage, open spaces and utilities before a single plot is sold.',
-      'Without DTCP approval, a layout can face demolition orders, denial of building permission, and — critically — banks will refuse to sanction a home loan against the plot. This alone eliminates a huge pool of genuine buyers if you ever want to resell.',
-      'Every current and completed Vijaya Developers project carries full DTCP approval, along with clear title and survey settlement documents. Before you finalize any plot anywhere, always ask for the DTCP approval number and verify it independently with the local authority.',
+      'When you buy an open plot, the layout\'s approval status determines whether your investment is legally sound or a future headache. DTCP & CRDA (Directorate of Town and Country Planning) approval confirms that a layout meets government-mandated standards for roads, drainage, open spaces and utilities before a single plot is sold.',
+      'Without DTCP & CRDA approval, a layout can face demolition orders, denial of building permission, and — critically — banks will refuse to sanction a home loan against the plot. This alone eliminates a huge pool of genuine buyers if you ever want to resell.',
+      'Every current and completed Vijaya Developers project carries full DTCP & CRDA approval, along with clear title and survey settlement documents. Before you finalize any plot anywhere, always ask for the DTCP & CRDA approval number and verify it independently with the local authority.',
       'A clean approval also means your layout will actually get the roads, drainage and streetlights promised in the brochure — because the government has signed off on that infrastructure plan, not just the marketing one.',
     ],
   },
@@ -149,7 +152,7 @@ export const BLOGS = [
     image: 'enclave',
     excerpt: 'Plot loans work differently from home loans. Here\'s what banks actually check before approving one.',
     body: [
-      'Most nationalised and private banks offer plot loans, but only against layouts that are DTCP or equivalent government-approved — this is the first thing an underwriter verifies, before even looking at your income documents.',
+      'Most nationalised and private banks offer plot loans, but only against layouts that are DTCP & CRDA or equivalent government-approved — this is the first thing an underwriter verifies, before even looking at your income documents.',
       'Expect to provide standard KYC, income proof, and the layout\'s approval and title documents. Banks typically fund 70–80% of the plot\'s value, with the remainder payable as your margin contribution.',
       'Unlike home loans, plot loans usually carry a marginally higher interest rate and a condition to begin construction within a fixed period (often 2–3 years), after which the loan may need to be converted or refinanced.',
       'Working with a developer that has pre-tied-up bank approvals for their layout speeds up this entire process significantly, since the bank has already vetted the project once.',
@@ -186,11 +189,11 @@ export const PROJECTS = [
     price: 'Plots ₹21,000/sq.yd · Villas ₹1.20 Cr+',
     area: '32 Acres',
     plotSizes: '167–300 sq.yd Plots · 4+1 BHK Villas',
-    tagline: 'Premium villas and open plots in a DTCP-approved gated community.',
-    image: 'villas',
+    tagline: 'Premium villas and open plots in a DTCP & CRDA-approved gated community.',
+    image: villaExteriorImg,
     amenities: ['Premium Villas','Premium Open Plots','Club House',"Children's Park",'40\' BT Roads','24×7 Security'],
-    approvals: ['DTCP Approved','Clear Title','Bank Loan Eligible','Survey Settlement'],
-    description: 'Luxury Villas @ Kesarapalli, Gannavaram is a DTCP-approved gated community offering both premium open plots and luxury villas. With a club house, children\'s park, 40\' BT roads and round-the-clock security, it\'s designed for families who want a resort-like everyday lifestyle.',
+    approvals: ['DTCP & CRDA Approved','Clear Title','Bank Loan Eligible','Survey Settlement'],
+    description: 'Luxury Villas @ Kesarapalli, Gannavaram is a DTCP & CRDA-approved gated community offering both premium open plots and luxury villas. With a club house, children\'s park, 40\' BT roads and round-the-clock security, it\'s designed for families who want a resort-like everyday lifestyle.',
     availability: [
       { size: '167 sq.yd (Plot)', facing: 'East', status: 'Available', price: '₹35.07L' },
       { size: '200 sq.yd (Plot)', facing: 'North', status: 'Available', price: '₹42L' },
@@ -209,7 +212,7 @@ export const PROJECTS = [
     tagline: 'Spacious 4+1 bedroom villas with premium construction and modern elevation.',
     image: 'villas',
     amenities: ['4+1 Bedrooms','Premium Construction','Spacious Layout','Modern Elevation','Clubhouse','Smart Home Ready'],
-    approvals: ['DTCP Approved','RERA Registered','Bank Loan Eligible','Vastu Compliant'],
+    approvals: ['DTCP & CRDA Approved','RERA Registered','Bank Loan Eligible','Vastu Compliant'],
     description: 'Premium Villas @ Ramavarappadu offers spacious 4+1 bedroom villas built with premium construction quality and a modern elevation. Contact our team for the latest floor plans and current availability.',
     availability: [
       { size: '4+1 BHK', facing: 'East', status: 'Available', price: '₹1.20 Cr onwards' },
@@ -224,7 +227,7 @@ export const PROJECTS = [
     area: 'Coming Soon',
     plotSizes: '165 & 200 sq.yd (more sizes to be announced)',
     tagline: 'New Launch — Premium gated community with wide internal roads and full infrastructure.',
-    image: 'enclave',
+    image: openPlotLayoutImg,
     amenities: ['Premium Gated Community','Wide Internal Roads','Avenue Plantation','Underground Drainage','Electricity & Water Connection','Compound Wall','Bank Loan Assistance','Legal Verified'],
     approvals: ['Legal Verified','Bank Loan Eligible','Registration Assistance'],
     description: 'Premium Open Plots @ Gandigunta Village is our newest launch — a premium gated community with wide internal roads, avenue plantation, underground drainage and full electricity & water connections. Bank loan assistance and complete legal verification included.',
@@ -243,7 +246,7 @@ export const PROJECTS = [
     plotSizes: 'Sizes to be announced',
     tagline: 'New Launch — Premium layout near Gannavaram Airport and NH-16.',
     image: 'enclave',
-    amenities: ['Premium Layout','DTCP / RERA (If Applicable)','Wide Roads','Underground Drainage','Water & Electricity','Avenue Plantation','Legal Verification','Registration Assistance'],
+    amenities: ['Premium Layout','DTCP & CRDA / RERA (If Applicable)','Wide Roads','Underground Drainage','Water & Electricity','Avenue Plantation','Legal Verification','Registration Assistance'],
     approvals: ['Legal Verified','Registration Assistance'],
     description: 'Premium Open Plots @ Kondapavuluru Village is strategically located close to Gannavaram Airport, NH-16, Vijayawada and Amaravati — offering excellent connectivity alongside a premium, fully-planned layout.',
     availability: [],
@@ -257,9 +260,9 @@ export const PROJECTS = [
     area: '18 Acres',
     plotSizes: '150–400 sq.yd',
     tagline: 'Delivered community of happy families. Fully Sold Out.',
-    image: 'greenCity',
+    image: townhomesDuskImg,
     amenities: ['Fully Developed','Mature Plantation','Established Neighbourhood','All Utilities Live'],
-    approvals: ['DTCP Approved','Delivered & Registered','Title Cleared'],
+    approvals: ['DTCP & CRDA Approved','Delivered & Registered','Title Cleared'],
     description: 'Vijaya Spring Fields in Kankipadu is a fully delivered and registered community. All plots are sold and families have built their dream homes in this thriving neighbourhood with mature plantation and complete utilities.',
     availability: [],
   },

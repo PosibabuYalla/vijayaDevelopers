@@ -8,8 +8,15 @@ export default function Footer() {
   return (
     <footer
       style={{ backgroundColor: '#1B2430' }}
-      className="text-white pt-16 pb-6"
+      className="relative overflow-hidden text-white pt-16 pb-6"
     >
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
       <div className="relative overflow-hidden">
         <img
           src={footerBg}
@@ -28,7 +35,7 @@ export default function Footer() {
           <div>
             <img src={logo} alt="Vijaya Developers" className="h-30 w-auto mb-4" />
             <p className="text-white/70 text-sm leading-relaxed mb-5">
-              Trusted builders of DTCP-approved open plots, premium villas and gated communities in Vijayawada since 2007.
+              Trusted builders of DTCP & CRDA-approved open plots, premium villas and gated communities in Vijayawada since 2007.
             </p>
             <div className="flex gap-3">
               {[
@@ -107,6 +114,19 @@ export default function Footer() {
             <a key={l} href="#" className="hover:text-white/70 transition-colors">{l}</a>
           ))}
         </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-3 text-center text-xs text-white/40">
+        <p>
+          Website Designed &amp; Developed by{' '}
+          <a
+            href="https://www.sabariyatech.in"
+            target="_blank"
+            rel="noreferrer"
+            className="text-gradient-light font-semibold hover:text-white transition-colors"
+          >
+            SabariyaTech
+          </a>
+        </p>
       </div>
     </footer>
   )

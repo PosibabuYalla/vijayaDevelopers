@@ -38,7 +38,7 @@ export default function ProjectDetail() {
     <div>
       {/* Hero */}
       <section className="relative h-80 sm:h-[28rem] overflow-hidden flex items-end">
-        <img src={IMAGES[image]} alt={name} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={IMAGES[image] || image} alt={name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white w-full">
           <Link to="/projects" className="inline-flex items-center gap-1 text-white/70 hover:text-white font-label text-sm mb-4 transition-colors">
