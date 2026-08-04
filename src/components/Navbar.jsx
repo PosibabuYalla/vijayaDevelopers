@@ -20,6 +20,7 @@ const navLinks = [
   { label: 'Our Programs', to: '/programs' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Blogs', to: '/blogs' },
+  { label: 'Careers', to: '/careers' },
   { label: 'Contact', to: '/contact' },
 ]
 

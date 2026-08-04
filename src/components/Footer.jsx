@@ -61,6 +61,7 @@ export default function Footer() {
                 ['Our Programs', '/programs'],
                 ['Gallery', '/gallery'],
                 ['Blogs', '/blogs'],
+                ['Careers', '/careers'],
                 ['Contact', '/contact'],
               ].map(([l, to]) => (
                 <li key={l}>

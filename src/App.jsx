@@ -5,6 +5,7 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Programs from './pages/Programs'
+import Careers from './pages/Careers'
 import Gallery from './pages/Gallery'
 import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/programs" element={<Programs />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
