@@ -8,10 +8,11 @@ import {
 } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
-import { IMAGES, CONTACT, PROJECTS, PRICING, PROGRAMS } from '../data/data'
+import { CONTACT, PROJECTS, PRICING, PROGRAMS } from '../data/data'
 import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
 import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
 import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
+import heroImg from '../assets/heroImg.png'
 
 const BROCHURE_WHATSAPP = `${CONTACT.whatsapp}?text=${encodeURIComponent('Hi, I would like to download the project brochure.')}`
 
@@ -142,7 +143,7 @@ export default function Home() {
       {/* ── 1. HERO ── */}
       <section className="relative min-h-screen overflow-hidden flex items-center justify-center pt-28 pb-16">
         <img
-          src={IMAGES.hero}
+          src={heroImg}
           alt="Vijaya Developers aerial view"
           className="absolute inset-0 w-full h-full object-cover animate-kenburns"
         />
