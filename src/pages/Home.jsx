@@ -147,7 +147,7 @@ export default function Home() {
           alt="Vijaya Developers aerial view"
           className="absolute inset-0 w-full h-full object-cover animate-kenburns"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(230,89,0,0.4) 0%, rgba(27,36,48,0.55) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(27,36,48,0.35) 0%, rgba(27,36,48,0.25) 40%, rgba(27,36,48,0.55) 100%)' }} />
 
         <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
           <Reveal>
