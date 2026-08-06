@@ -55,7 +55,7 @@ export default function Blogs() {
               >
                 <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
                   <img
-                    src={IMAGES[post.image]}
+                    src={IMAGES[post.image] || post.image}
                     alt={post.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

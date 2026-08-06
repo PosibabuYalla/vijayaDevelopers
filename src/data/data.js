@@ -2,6 +2,11 @@ import { Church, Handshake, ShieldCheck, HandHeart } from 'lucide-react'
 import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
 import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
 import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
+import buyingPropertyImg from '../assets/Buying Property.webp'
+import marketInsightsImg from '../assets/Market Insights.jpg'
+import dtcpApprovalImg from '../assets/DTCP.webp'
+import stepByStepGuideImg from '../assets/STEP BY STEP GUIDE.webp'
+import gatedCommunityAmenitiesImg from '../assets/TOP AMENTITIES OF GATED COMMUNITIES.webp'
 
 function naturalSort(a, b) {
   const numA = parseInt((a.match(/(\d+)(?!.*\d)/) || [0])[0], 10)
@@ -89,7 +94,7 @@ export const BLOGS = [
     category: 'Buying Guide',
     date: '2026-06-02',
     readTime: '4 min read',
-    image: 'greenCity',
+    image: dtcpApprovalImg,
     excerpt: 'DTCP & CRDA approval is the single most important checkbox before you sign on any open plot. Here\'s what it actually protects you from.',
     body: [
       'When you buy an open plot, the layout\'s approval status determines whether your investment is legally sound or a future headache. DTCP & CRDA (Directorate of Town and Country Planning) approval confirms that a layout meets government-mandated standards for roads, drainage, open spaces and utilities before a single plot is sold.',
@@ -104,7 +109,7 @@ export const BLOGS = [
     category: 'Market Insights',
     date: '2026-05-18',
     readTime: '5 min read',
-    image: 'hero',
+    image: marketInsightsImg,
     excerpt: 'From highway expansions to its proximity to Amaravati, here\'s why land values around Vijayawada keep climbing.',
     body: [
       'Vijayawada sits at the crossroads of NH-16 and NH-65, giving it road connectivity that few other tier-2 cities in South India can match. That alone has historically been one of the strongest predictors of long-term land appreciation.',
@@ -119,7 +124,7 @@ export const BLOGS = [
     category: 'Buying Guide',
     date: '2026-04-27',
     readTime: '4 min read',
-    image: 'villas',
+    image: buyingPropertyImg,
     excerpt: 'Both build wealth differently. Here\'s how to decide between a blank canvas and a move-in-ready villa.',
     body: [
       'An open plot gives you flexibility — you decide when to build, how to design, and can hold it as a pure appreciation play with lower upfront cost. It suits buyers with a longer time horizon who don\'t need to move in immediately.',
@@ -134,7 +139,7 @@ export const BLOGS = [
     category: 'Legal & Documentation',
     date: '2026-03-14',
     readTime: '6 min read',
-    image: 'about',
+    image: stepByStepGuideImg,
     excerpt: 'Registration can feel intimidating on paper. Broken down into steps, it\'s a predictable, manageable process.',
     body: [
       'Registration formally transfers ownership in government records. It begins with document verification — sale deed, encumbrance certificate, approved layout plan and identity proofs — to confirm the property is free of legal disputes.',
@@ -149,7 +154,7 @@ export const BLOGS = [
     category: 'Finance',
     date: '2026-02-20',
     readTime: '5 min read',
-    image: 'enclave',
+    image: villaExteriorImg,
     excerpt: 'Plot loans work differently from home loans. Here\'s what banks actually check before approving one.',
     body: [
       'Most nationalised and private banks offer plot loans, but only against layouts that are DTCP & CRDA or equivalent government-approved — this is the first thing an underwriter verifies, before even looking at your income documents.',
@@ -164,7 +169,7 @@ export const BLOGS = [
     category: 'Lifestyle',
     date: '2026-01-30',
     readTime: '4 min read',
-    image: 'greenCity',
+    image: gatedCommunityAmenitiesImg,
     excerpt: 'Not all amenities add equal value. Here\'s a practical checklist for evaluating any gated layout.',
     body: [
       'Start with the basics that affect daily life: underground cabling, wide internal roads, stormwater drainage and 24×7 security. These aren\'t glamorous, but they\'re what separates a well-planned layout from one that looks good only in the brochure.',

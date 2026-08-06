@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { CheckCircle2, HeartHandshake, Scale, Leaf, Gem } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT } from '../data/data'
+import buildingFutureImg from "../assets/Building Vijayawada's future, one plot at a time..webp"
 
 const TIMELINE = [
   { year: '2007', event: 'Founded in Vijayawada with a vision to deliver transparent, DTCP & CRDA-approved real estate.' },
@@ -68,7 +69,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <div className="rounded-xl3 overflow-hidden" style={{ aspectRatio: '4/3' }}>
-              <img src={IMAGES.greenCity} alt="Vijaya Green City" className="w-full h-full object-cover" />
+              <img src={buildingFutureImg} alt="Building Vijayawada's future, one plot at a time" className="w-full h-full object-cover" />
             </div>
           </Reveal>
           <div>

@@ -26,7 +26,7 @@ export default function BlogDetail() {
     <div>
       {/* Hero */}
       <section className="relative h-80 sm:h-[28rem] overflow-hidden flex items-end">
-        <img src={IMAGES[post.image]} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={IMAGES[post.image] || post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-10 text-white w-full">
           <Link to="/blogs" className="inline-flex items-center gap-1 text-white/70 hover:text-white font-label text-sm mb-4 transition-colors">
@@ -88,7 +88,7 @@ export default function BlogDetail() {
                 >
                   <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
                     <img
-                      src={IMAGES[r.image]}
+                      src={IMAGES[r.image] || r.image}
                       alt={r.title}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
