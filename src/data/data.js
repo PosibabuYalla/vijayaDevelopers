@@ -65,7 +65,7 @@ export const CONTACT = {
   phone:     '+91 83281 21717',
   tel:       'tel:+918328121717',
   whatsapp:  'https://wa.me/918328121717',
-  email:     'mathiharshitha@gmail.com',
+  email:     'info.vijayadevelopers@gmail.com',
 }
 
 export const SOCIAL = {
