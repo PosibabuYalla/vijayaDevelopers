@@ -1,4 +1,4 @@
-import { Church, Handshake, ShieldCheck, HandHeart } from 'lucide-react'
+import { Church, Handshake, ShieldCheck, HandHeart, School, Hospital, GraduationCap, Plane, TrainFront, Route } from 'lucide-react'
 import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
 import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
 import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
@@ -65,7 +65,7 @@ export const CONTACT = {
   phone:     '+91 83281 21717',
   tel:       'tel:+918328121717',
   whatsapp:  'https://wa.me/918328121717',
-  email:     'hello@vijayadevelopers.com',
+  email:     'mathiharshitha@gmail.com',
 }
 
 export const SOCIAL = {
@@ -239,6 +239,14 @@ export const PROJECTS = [
     availability: [
       { size: '165 sq.yd', facing: 'TBD', status: 'Pre-Launch', price: 'On Request' },
       { size: '200 sq.yd', facing: 'TBD', status: 'Pre-Launch', price: 'On Request' },
+    ],
+    locationTiles: [
+      { icon: School, label: 'Schools', dist: '4 km' },
+      { icon: Hospital, label: 'Hospitals', dist: '3 km' },
+      { icon: GraduationCap, label: 'Colleges', dist: '4 km' },
+      { icon: Plane, label: 'Airport', dist: '4 km' },
+      { icon: TrainFront, label: 'Railway', dist: '2 km' },
+      { icon: Route, label: 'Highway', dist: '3 km' },
     ],
   },
   {

@@ -33,6 +33,7 @@ export default function ProjectDetail() {
 
   const { name, location, status, price, area, plotSizes, tagline, image, description, amenities, approvals, availability } = project
   const pill = STATUS_STYLES[status]
+  const locationTiles = project.locationTiles || LOCATION_TILES
 
   return (
     <div>
@@ -138,7 +139,7 @@ export default function ProjectDetail() {
             <Reveal>
               <h2 className="font-display text-2xl font-bold text-charcoal mb-4">Location Advantages</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {LOCATION_TILES.map((t) => (
+                {locationTiles.map((t) => (
                   <div key={t.label} className="bg-white border border-sand-beige rounded-xl2 p-4 text-center">
                     <t.icon size={22} className="text-teal mx-auto mb-1" />
                     <div className="font-label text-sm font-semibold text-charcoal">{t.label}</div>

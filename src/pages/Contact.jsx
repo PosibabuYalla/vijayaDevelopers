@@ -8,12 +8,39 @@ const INTERESTS = ['Open Plots','Premium Villas','Gated Community','Investment C
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', interest: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setError(false)
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${CONTACT.email}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `New Enquiry from ${form.name} — Vijaya Developers Website`,
+          Name: form.name,
+          Phone: form.phone,
+          Email: form.email,
+          'Interested In': form.interest || 'Not specified',
+          Message: form.message || '—',
+        }),
+      })
+      const data = await res.json().catch(() => null)
+      if (!res.ok || !data || data.success === false || data.success === 'false') {
+        throw new Error('Submission failed')
+      }
+      setSubmitted(true)
+      setForm({ name: '', phone: '', email: '', interest: '', message: '' })
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -127,11 +154,17 @@ export default function Contact() {
                         className="w-full px-4 py-3 rounded-xl border border-sand-beige bg-offwhite text-charcoal text-sm outline-none focus:border-gradient-brand transition-colors resize-none"
                       />
                     </div>
+                    {error && (
+                      <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                        Something went wrong sending your enquiry. Please try again, or call/WhatsApp us directly.
+                      </p>
+                    )}
                     <button
                       type="submit"
-                      className="w-full py-3 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors"
+                      disabled={submitting}
+                      className="w-full py-3 rounded-full bg-gradient-brand text-white font-label font-semibold hover:bg-gradient-brand-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Submit Enquiry
+                      {submitting ? 'Sending...' : 'Submit Enquiry'}
                     </button>
                   </form>
                 </>

@@ -3,6 +3,7 @@ import { CheckCircle2, HeartHandshake, Scale, Leaf, Gem } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT } from '../data/data'
 import buildingFutureImg from "../assets/Building Vijayawada's future, one plot at a time..webp"
+import heroOfAboutImg from '../assets/heroOfAbout.png'
 
 const TIMELINE = [
   { year: '2007', event: 'Founded in Vijayawada with a vision to deliver transparent, DTCP & CRDA-approved real estate.' },
@@ -56,7 +57,7 @@ export default function About() {
     <div>
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={IMAGES.about} alt="About" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroOfAboutImg} alt="About" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Our Story</p>
