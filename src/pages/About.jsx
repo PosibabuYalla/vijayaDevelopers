@@ -9,7 +9,7 @@ const TIMELINE = [
   { year: '2007', event: 'Founded in Vijayawada with a vision to deliver transparent, DTCP & CRDA-approved real estate.' },
   { year: '2012', event: 'Launched our first gated community — setting a new standard for planned layouts.' },
   { year: '2017', event: 'Crossed 100+ happy families milestone across multiple projects.' },
-  { year: '2022', event: 'Entered the premium villa segment with Premium Villas @ Ramavarappadu.' },
+  { year: '2022', event: 'Entered the premium villa segment with Premium Villas @ Kesarapalli.' },
   { year: '2026', event: '220+ acres developed, 950+ families, new launches at Gandigunta and Kondapavuluru.' },
 ]
 
@@ -80,7 +80,7 @@ export default function About() {
                 Building Vijayawada's future, one plot at a time.
               </h2>
               <p className="text-charcoal/70 mb-4">
-                Vijaya Developers was founded in 2007 with a singular mission: to make premium, legally clear real estate accessible to every family in Vijayawada. Over 18 years, we have developed 220+ acres across Kesarapalli (Gannavaram), Ramavarappadu and Kankipadu — with new launches now underway at Gandigunta and Kondapavuluru villages.
+                Vijaya Developers was founded in 2007 with a singular mission: to make premium, legally clear real estate accessible to every family in Vijayawada. Over 18 years, we have developed 220+ acres across Kesarapalli (Gannavaram), Vijayawada and Kankipadu — with new launches now underway at Gandigunta and Kondapavuluru villages.
               </p>
               <p className="text-charcoal/70 mb-6">
                 Our projects are known for DTCP & CRDA approval, clear titles, bank loan eligibility and world-class infrastructure. We don't just sell plots — we build communities where families thrive.

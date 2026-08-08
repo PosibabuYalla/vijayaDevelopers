@@ -24,7 +24,7 @@ const HERO_HIGHLIGHTS = [
   'Trusted by Hundreds of Families',
 ]
 
-const PROJECT_LOCATIONS = ['Kesarapalli · Gannavaram', 'Ramavarappadu', 'Gandigunta Village', 'Kondapavuluru Village']
+const PROJECT_LOCATIONS = ['Kesarapalli · Gannavaram', 'Vijayawada', 'Gandigunta Village', 'Kondapavuluru Village']
 
 /* ── TRUST STATS ── */
 function useCountUp(target, active) {

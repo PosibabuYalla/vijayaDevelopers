@@ -213,9 +213,9 @@ export const PROJECTS = [
     ],
   },
   {
-    slug: 'premium-villas-ramavarappadu',
-    name: 'Premium Villas @ Ramavarappadu',
-    location: 'Ramavarappadu, Vijayawada',
+    slug: 'premium-villas-Kesarapalli',
+    name: 'Premium Villas @ Kesarapalli',
+    location: 'Kesarapalli, Vijayawada',
     status: 'current',
     price: '₹1.20 Cr onwards',
     area: '12 Acres',
@@ -224,7 +224,7 @@ export const PROJECTS = [
     image: 'villas',
     amenities: ['4+1 Bedrooms','Premium Construction','Spacious Layout','Modern Elevation','Clubhouse','Smart Home Ready'],
     approvals: ['DTCP & CRDA Approved','RERA Registered','Bank Loan Eligible','Vastu Compliant'],
-    description: 'Premium Villas @ Ramavarappadu offers spacious 4+1 bedroom villas built with premium construction quality and a modern elevation. Contact our team for the latest floor plans and current availability.',
+    description: 'Premium Villas @ Kesarapalli offers spacious 4+1 bedroom villas built with premium construction quality and a modern elevation. Contact our team for the latest floor plans and current availability.',
     availability: [
       { size: '4+1 BHK', facing: 'East', status: 'Available', price: '₹1.20 Cr onwards' },
     ],
