@@ -2,6 +2,7 @@ import { CheckCircle2, Target, Lightbulb, Award, Compass, Phone, MessageCircle }
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ZigzagGallery from '../components/ZigzagGallery'
 import { CONTACT, TREKKING_IMAGES, CLIENT_DISCUSSION_IMAGES } from '../data/data'
+import careersHero from '../assets/Careers Page hero image.jpeg'
 
 const CAREERS_WHATSAPP = `${CONTACT.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in career opportunities at Vijaya Developers.")}`
 
@@ -25,7 +26,7 @@ export default function Careers() {
     <div>
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={TREKKING_IMAGES[0]} alt="Careers at Vijaya Developers" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={careersHero} alt="Careers at Vijaya Developers" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Careers</p>

@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import SurveyForm from '../components/SurveyForm'
 import { CheckCircle2, Phone, MessageCircle, FileText, ArrowLeft, MapPin, School, Hospital, GraduationCap, Plane, TrainFront, Route } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT, PROJECTS } from '../data/data'
@@ -195,6 +196,9 @@ export default function ProjectDetail() {
           </div>
         </div>
       </section>
+
+      {/* Customer Survey Form — Kondapavuluru only */}
+      {slug === 'premium-open-plots-kondapavuluru-village' && <SurveyForm />}
 
       {/* Final CTA */}
       <section className="relative py-20 overflow-hidden">
