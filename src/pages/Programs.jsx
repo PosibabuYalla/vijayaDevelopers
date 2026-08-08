@@ -4,7 +4,7 @@ import { CheckCircle2 } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ImageLightbox from '../components/ImageLightbox'
 import { IMAGES, PROGRAMS, DONATION_IMAGES } from '../data/data'
-import heroOfOurProgramsImg from '../assets/heroOfOurPrograms.png'
+import heroOfOurProgramsImg from '../assets/heroOfOurProgram.png'
 
 export default function Programs() {
   const seva = PROGRAMS.find((p) => p.title === 'Seva')

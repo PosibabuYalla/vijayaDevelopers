@@ -205,6 +205,12 @@ export const PROJECTS = [
       { size: '300 sq.yd (Plot)', facing: 'East', status: 'Available', price: '₹63L' },
       { size: '4+1 BHK Villa', facing: 'East', status: 'Available', price: '₹1.20 Cr onwards' },
     ],
+    locationTiles: [
+      { icon: School, label: 'Schools & Colleges', dist: '4 km' },
+      { icon: Plane, label: 'Airport', dist: '4 km' },
+      { icon: TrainFront, label: 'Railway Station', dist: '2 km' },
+      { icon: Route, label: 'Highway', dist: '3 km' },
+    ],
   },
   {
     slug: 'premium-villas-ramavarappadu',
