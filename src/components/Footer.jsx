@@ -33,7 +33,10 @@ export default function Footer() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Vijaya Developers" className="h-30 w-auto mb-4" />
+            <img src={logo} alt="Vijaya Developers" className="h-30 w-auto -mb-2" />
+            <p className="font-display italic text-gold text-sm tracking-wide mb-4">
+              We Construct Your Dreams
+            </p>
             <p className="text-white/70 text-sm leading-relaxed mb-5">
               Trusted builders of DTCP & CRDA-approved open plots, premium villas and gated communities in Vijayawada since 2007.
             </p>

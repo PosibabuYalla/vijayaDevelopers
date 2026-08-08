@@ -3,6 +3,7 @@ import { CheckCircle2, Phone, MessageCircle, FileText, ArrowLeft, MapPin, School
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT, PROJECTS } from '../data/data'
 import brochurePdf from '../assets/VijayaDevelopersBroucher.pdf'
+import kesarapalliPlanPdf from '../assets/Kesarapalli.pdf'
 
 const STATUS_STYLES = {
   current:   { label: 'Available Now', bg: 'bg-gradient-brand text-white' },
@@ -136,6 +137,21 @@ export default function ProjectDetail() {
               </Reveal>
             )}
 
+            {/* Project Plan PDF */}
+            {slug === 'luxury-villas-kesarapalli-gannavaram' && (
+              <Reveal>
+                <h2 className="font-display text-2xl font-bold text-charcoal mb-4">Project Plan</h2>
+                <div className="w-full rounded-xl2 border border-sand-beige overflow-hidden bg-white">
+                  <iframe
+                    src={`${kesarapalliPlanPdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&pagemode=none`}
+                    title="Kesarapalli Project Plan"
+                    className="w-full"
+                    style={{ height: '600px', colorScheme: 'light', background: '#ffffff' }}
+                  />
+                </div>
+              </Reveal>
+            )}
+
             {/* Location Advantages */}
             <Reveal>
               <h2 className="font-display text-2xl font-bold text-charcoal mb-4">Location Advantages</h2>
@@ -171,6 +187,7 @@ export default function ProjectDetail() {
               >
                 <FileText size={16} /> Download Brochure
               </a>
+
               <div className="pt-2 border-t border-sand-beige text-xs text-charcoal/50 text-center">
                 Mon–Sat · 9:30 AM – 7:00 PM
               </div>

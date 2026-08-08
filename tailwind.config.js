@@ -17,6 +17,7 @@ export default {
         charcoal: '#1B2430',
         offwhite: '#FAFBFC',
         surface: '#F5F7FA',
+        gold: '#C9A227',
       },
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],

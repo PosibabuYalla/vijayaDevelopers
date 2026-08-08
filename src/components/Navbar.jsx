@@ -63,8 +63,11 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex flex-col items-start">
             <img src={logo} alt="Vijaya Developers" className="h-24 sm:h-28 w-auto" />
+            <p className="font-display italic text-gold text-xs sm:text-sm tracking-wide -mt-2 sm:-mt-3">
+              We Construct Your Dreams
+            </p>
           </Link>
 
           {/* Desktop nav */}
@@ -161,7 +164,12 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] bg-charcoal flex flex-col overflow-y-auto p-6 sm:p-8">
           <div className="flex justify-between items-center mb-8 shrink-0">
-            <img src={logo} alt="Vijaya Developers" className="h-14 w-auto" />
+            <div className="flex flex-col items-start">
+              <img src={logo} alt="Vijaya Developers" className="h-14 w-auto" />
+              <p className="font-display italic text-gold text-xs tracking-wide -mt-1.5">
+                We Construct Your Dreams
+              </p>
+            </div>
             <button onClick={closeMobileMenu} aria-label="Close menu" className="p-1">
               <X size={26} color="#fff" />
             </button>
