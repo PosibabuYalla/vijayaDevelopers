@@ -13,8 +13,7 @@ import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
 import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
 import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
 import heroImg from '../assets/heroImg.png'
-
-const BROCHURE_WHATSAPP = `${CONTACT.whatsapp}?text=${encodeURIComponent('Hi, I would like to download the project brochure.')}`
+import brochurePdf from '../assets/VijayaDevelopersBroucher.pdf'
 
 const HERO_HIGHLIGHTS = [
   'Expert Land Investment Company',
@@ -192,7 +191,8 @@ export default function Home() {
                 Book Site Visit
               </a>
               <a
-                href={BROCHURE_WHATSAPP}
+                href={brochurePdf}
+                download="Vijaya-Developers-Brochure.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="px-8 py-3 rounded-full border border-white/50 text-white font-label font-semibold backdrop-blur-sm hover:bg-white/10 transition-colors"

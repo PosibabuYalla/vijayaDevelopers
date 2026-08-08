@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { CheckCircle2, Phone, MessageCircle, FileText, ArrowLeft, MapPin, School, Hospital, GraduationCap, Plane, TrainFront, Route } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { IMAGES, CONTACT, PROJECTS } from '../data/data'
+import brochurePdf from '../assets/VijayaDevelopersBroucher.pdf'
 
 const STATUS_STYLES = {
   current:   { label: 'Available Now', bg: 'bg-gradient-brand text-white' },
@@ -161,9 +162,15 @@ export default function ProjectDetail() {
               <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-green-500 text-white font-label font-semibold hover:bg-green-600 transition-colors">
                 <MessageCircle size={16} /> WhatsApp
               </a>
-              <button className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-sand-beige text-charcoal font-label font-semibold hover:border-gradient-brand transition-colors">
+              <a
+                href={brochurePdf}
+                download="Vijaya-Developers-Brochure.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-sand-beige text-charcoal font-label font-semibold hover:border-gradient-brand transition-colors"
+              >
                 <FileText size={16} /> Download Brochure
-              </button>
+              </a>
               <div className="pt-2 border-t border-sand-beige text-xs text-charcoal/50 text-center">
                 Mon–Sat · 9:30 AM – 7:00 PM
               </div>
