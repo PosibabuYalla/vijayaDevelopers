@@ -89,7 +89,7 @@ export const GALLERY = [
 
 export const BLOGS = [
   {
-    slug: 'why-DTCP & CRDA-approval-matters',
+    slug: 'why-dtcp-crda-approval-matters',
     title: 'Why DTCP & CRDA Approval Matters When Buying Open Plots',
     category: 'Buying Guide',
     date: '2026-06-02',

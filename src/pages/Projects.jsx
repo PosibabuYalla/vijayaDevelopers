@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
+import SEO from '../components/SEO'
 import { IMAGES, PROJECTS } from '../data/data'
 
 const FILTERS = [
@@ -21,9 +22,15 @@ export default function Projects() {
 
   return (
     <div>
+      <SEO
+        title="Open Plots & Villas in Vijayawada & Gannavaram — Our Projects"
+        description="Browse DTCP & CRDA-approved open plots and premium villas across Vijayawada, Gannavaram, Kankipadu, Gandigunta and Kondapavuluru. Current, upcoming and completed projects by Vijaya Developers."
+        keywords="open plots Vijayawada, villas Vijayawada, open plots Gannavaram, villas Gannavaram, plots Kankipadu, gated community Vijayawada"
+        path="/projects"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={IMAGES.enclave} alt="Projects" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={IMAGES.enclave} alt="Open plot and villa projects by Vijaya Developers in Vijayawada" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Portfolio</p>

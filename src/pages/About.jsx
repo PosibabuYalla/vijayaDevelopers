@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2, HeartHandshake, Scale, Leaf, Gem } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
+import SEO from '../components/SEO'
 import { IMAGES, CONTACT } from '../data/data'
 import buildingFutureImg from "../assets/Building Vijayawada's future, one plot at a time..webp"
 import heroOfAboutImg from '../assets/heroOfAbout.png'
@@ -55,9 +56,15 @@ const LEGAL_TEAM = [
 export default function About() {
   return (
     <div>
+      <SEO
+        title="About Us — Trusted Real Estate Developers in Vijayawada Since 2007"
+        description="Since 2007, Vijaya Developers has delivered DTCP & CRDA-approved open plots, villas and gated communities across Vijayawada, Gannavaram and Kankipadu. 220+ acres developed, 950+ happy families."
+        keywords="real estate developers Vijayawada, trusted builders Vijayawada, DTCP CRDA approved company Vijayawada"
+        path="/about"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={heroOfAboutImg} alt="About" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroOfAboutImg} alt="About Vijaya Developers — real estate company in Vijayawada" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Our Story</p>

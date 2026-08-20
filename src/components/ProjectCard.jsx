@@ -20,7 +20,7 @@ export default function ProjectCard({ project }) {
       <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
         <img
           src={IMAGES[image] || image}
-          alt={name}
+          alt={`${name} — ${location}`}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />

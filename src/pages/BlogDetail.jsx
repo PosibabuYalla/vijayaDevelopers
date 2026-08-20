@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Phone, MessageCircle } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
+import SEO, { SITE_URL } from '../components/SEO'
 import { IMAGES, CONTACT, BLOGS } from '../data/data'
 
 const formatDate = (iso) =>
@@ -21,12 +22,44 @@ export default function BlogDetail() {
 
   const related = BLOGS.filter((b) => b.slug !== post.slug && b.category === post.category).slice(0, 3)
   const moreRelated = related.length > 0 ? related : BLOGS.filter((b) => b.slug !== post.slug).slice(0, 3)
+  const imgSrc = IMAGES[post.image] || post.image
+  const absoluteImg = typeof imgSrc === 'string' ? (imgSrc.startsWith('http') ? imgSrc : `${SITE_URL}${imgSrc.startsWith('/') ? '' : '/'}${imgSrc}`) : undefined
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: absoluteImg,
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: 'Vijaya Developers' },
+    publisher: { '@type': 'Organization', name: 'Vijaya Developers', logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` } },
+    mainEntityOfPage: `${SITE_URL}/blogs/${post.slug}`,
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blogs', item: `${SITE_URL}/blogs` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blogs/${post.slug}` },
+    ],
+  }
 
   return (
     <div>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        keywords={`${post.category}, Vijayawada real estate, ${post.title}`}
+        path={`/blogs/${post.slug}`}
+        image={absoluteImg}
+        jsonLd={[articleSchema, breadcrumbSchema]}
+      />
       {/* Hero */}
       <section className="relative h-80 sm:h-[28rem] overflow-hidden flex items-end">
-        <img src={IMAGES[post.image] || post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={imgSrc} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-10 text-white w-full">
           <Link to="/blogs" className="inline-flex items-center gap-1 text-white/70 hover:text-white font-label text-sm mb-4 transition-colors">

@@ -1,6 +1,7 @@
 import { CheckCircle2, Target, Lightbulb, Award, Compass, Phone, MessageCircle } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ZigzagGallery from '../components/ZigzagGallery'
+import SEO from '../components/SEO'
 import { CONTACT, TREKKING_IMAGES, CLIENT_DISCUSSION_IMAGES } from '../data/data'
 import careersHero from '../assets/Careers Page hero image.jpeg'
 
@@ -24,9 +25,15 @@ const LIFE_GALLERY = [...TREKKING_IMAGES.slice(0, 4), ...CLIENT_DISCUSSION_IMAGE
 export default function Careers() {
   return (
     <div>
+      <SEO
+        title="Careers — Join Our Real Estate Team in Vijayawada"
+        description="Build your career with Vijaya Developers, a trusted real estate company in Vijayawada. Explore open roles and our team culture."
+        keywords="real estate jobs Vijayawada, careers Vijaya Developers"
+        path="/careers"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={careersHero} alt="Careers at Vijaya Developers" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={careersHero} alt="Careers at Vijaya Developers — Vijayawada" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Careers</p>

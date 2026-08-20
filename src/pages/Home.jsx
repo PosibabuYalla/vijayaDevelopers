@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
+import SEO from '../components/SEO'
 import { CONTACT, PROJECTS, PRICING, PROGRAMS } from '../data/data'
 import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
 import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
@@ -137,13 +138,31 @@ export default function Home() {
   const featured = PROJECTS.filter((p) => p.status === 'current').slice(0, 3)
     .map((p, i) => ({ ...p, image: FEATURED_IMAGES[i % FEATURED_IMAGES.length] }))
 
+  // Sitewide RealEstateAgent schema lives in index.html; only page-specific schema goes here.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <div>
+      <SEO
+        title="Best Real Estate in Vijayawada | Open Plots & Villas"
+        description="Vijaya Developers offers DTCP & CRDA-approved open plots and premium villas in Vijayawada, Gannavaram, Kankipadu, Gandigunta & Kondapavuluru. 18+ years of trust, 950+ happy families."
+        keywords="best real estate in Vijayawada, open plots in Vijayawada, villas in Vijayawada, open plots Gannavaram, villas Gannavaram, real estate developers Vijayawada, DTCP CRDA approved plots Vijayawada, gated community Vijayawada, land for sale Vijayawada"
+        path="/"
+        jsonLd={faqSchema}
+      />
       {/* ── 1. HERO ── */}
       <section className="relative min-h-screen overflow-hidden flex items-center justify-center pt-28 pb-16">
         <img
           src={heroImg}
-          alt="Vijaya Developers aerial view"
+          alt="Aerial view of open plots and villas by Vijaya Developers in Vijayawada"
           className="absolute inset-0 w-full h-full object-cover animate-kenburns"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(27,36,48,0.35) 0%, rgba(27,36,48,0.25) 40%, rgba(27,36,48,0.55) 100%)' }} />
@@ -231,7 +250,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <Reveal className="relative">
             <div className="relative rounded-xl3 overflow-hidden" style={{ aspectRatio: '4/5' }}>
-              <img src={villaExteriorImg} alt="About Vijaya Developers" className="w-full h-full object-cover" />
+              <img src={villaExteriorImg} alt="Vijaya Developers premium villa in Vijayawada" className="w-full h-full object-cover" />
             </div>
             <div className="absolute bottom-6 right-6 bg-white rounded-xl2 shadow-lg px-5 py-4 text-center">
               <div className="font-display text-3xl font-bold text-gradient">18+</div>
@@ -285,7 +304,7 @@ export default function Home() {
                 <div className="group relative h-full rounded-xl3 overflow-hidden">
                   <img
                     src={s.image}
-                    alt={s.title}
+                    alt={`${s.title} in Vijayawada by Vijaya Developers`}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ZigzagGallery from '../components/ZigzagGallery'
+import SEO from '../components/SEO'
 import { GALLERY, CONSTRUCTION_IMAGES, CLIENT_DISCUSSION_IMAGES, TREKKING_IMAGES } from '../data/data'
 
 const ZIGZAG_SECTIONS = [
@@ -27,9 +28,15 @@ export default function Gallery() {
 
   return (
     <div>
+      <SEO
+        title="Photo Gallery — Our Projects Across Vijayawada & Gannavaram"
+        description="See construction progress, client site visits and community events from Vijaya Developers' open plot and villa projects in Vijayawada, Gannavaram and nearby villages."
+        keywords="Vijaya Developers gallery, Vijayawada real estate photos, construction progress Vijayawada"
+        path="/gallery"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={CONSTRUCTION_IMAGES[3]} alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={CONSTRUCTION_IMAGES[3]} alt="Vijaya Developers project gallery — Vijayawada" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">A Visual Tour</p>

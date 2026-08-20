@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import SurveyForm from '../components/SurveyForm'
 import { CheckCircle2, Phone, MessageCircle, FileText, ArrowLeft, MapPin, School, Hospital, GraduationCap, Plane, TrainFront, Route } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
+import SEO, { SITE_URL } from '../components/SEO'
 import { IMAGES, CONTACT, PROJECTS } from '../data/data'
 import brochurePdf from '../assets/VijayaDevelopersBroucher.pdf'
 import kesarapalliPlanPdf from '../assets/Kesarapalli.pdf'
@@ -37,12 +38,43 @@ export default function ProjectDetail() {
   const { name, location, status, price, area, plotSizes, tagline, image, description, amenities, approvals, availability } = project
   const pill = STATUS_STYLES[status]
   const locationTiles = project.locationTiles || LOCATION_TILES
+  const imgSrc = IMAGES[image] || image
+  const absoluteImg = typeof imgSrc === 'string' ? (imgSrc.startsWith('http') ? imgSrc : `${SITE_URL}${imgSrc.startsWith('/') ? '' : '/'}${imgSrc}`) : undefined
+
+  const listingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateListing',
+    name: `${name} — ${location}`,
+    description,
+    url: `${SITE_URL}/projects/${slug}`,
+    image: absoluteImg,
+    address: { '@type': 'PostalAddress', addressLocality: location, addressRegion: 'Andhra Pradesh', addressCountry: 'IN' },
+    offers: { '@type': 'Offer', price, priceCurrency: 'INR', availability: status === 'completed' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock' },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Projects', item: `${SITE_URL}/projects` },
+      { '@type': 'ListItem', position: 3, name, item: `${SITE_URL}/projects/${slug}` },
+    ],
+  }
 
   return (
     <div>
+      <SEO
+        title={`${name} — ${location}`}
+        description={description}
+        keywords={`${name}, open plots ${location}, villas ${location}, real estate ${location}, ${location} Vijayawada properties`}
+        path={`/projects/${slug}`}
+        image={absoluteImg}
+        jsonLd={[listingSchema, breadcrumbSchema]}
+      />
       {/* Hero */}
       <section className="relative h-80 sm:h-[28rem] overflow-hidden flex items-end">
-        <img src={IMAGES[image] || image} alt={name} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={imgSrc} alt={`${name} — ${location}`} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white w-full">
           <Link to="/projects" className="inline-flex items-center gap-1 text-white/70 hover:text-white font-label text-sm mb-4 transition-colors">

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock, CheckCircle2 } from 'lucide-react'
 import { Reveal } from '../components/Reveal'
+import SEO from '../components/SEO'
 import { IMAGES, CONTACT } from '../data/data'
 
 const INTERESTS = ['Open Plots','Premium Villas','Gated Community','Investment Consulting','General Enquiry']
@@ -45,9 +46,15 @@ export default function Contact() {
 
   return (
     <div>
+      <SEO
+        title="Contact Us — Vijaya Developers, Vijayawada"
+        description="Get in touch with Vijaya Developers for open plots and villas in Vijayawada, Gannavaram & nearby areas. Call, WhatsApp or visit our office in Ramavarappadu, Vijayawada."
+        keywords="Vijaya Developers contact, real estate office Vijayawada, book site visit Vijayawada"
+        path="/contact"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={IMAGES.cta} alt="Contact" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={IMAGES.cta} alt="Contact Vijaya Developers — Vijayawada real estate office" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.7)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Reach Us</p>

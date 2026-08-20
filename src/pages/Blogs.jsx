@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
+import SEO from '../components/SEO'
 import { IMAGES, BLOGS } from '../data/data'
 
 const CATEGORIES = ['All', ...Array.from(new Set(BLOGS.map((b) => b.category)))]
@@ -18,9 +19,15 @@ export default function Blogs() {
 
   return (
     <div>
+      <SEO
+        title="Real Estate Blog — Vijayawada Property Investment Guides"
+        description="Expert guides on buying open plots and villas in Vijayawada & Gannavaram — DTCP & CRDA approval, registration, bank loans, and investment insights from Vijaya Developers."
+        keywords="Vijayawada real estate blog, open plot buying guide Vijayawada, property investment Vijayawada, DTCP CRDA approval"
+        path="/blogs"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={IMAGES.about} alt="Blogs" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={IMAGES.about} alt="Vijaya Developers real estate blog — Vijayawada property guides" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">Insights & Guides</p>

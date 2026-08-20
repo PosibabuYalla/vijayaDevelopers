@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import ImageLightbox from '../components/ImageLightbox'
+import SEO from '../components/SEO'
 import { IMAGES, PROGRAMS, DONATION_IMAGES } from '../data/data'
 import heroOfOurProgramsImg from '../assets/heroOfOurProgram.png'
 
@@ -13,9 +14,15 @@ export default function Programs() {
 
   return (
     <div>
+      <SEO
+        title="Community Programs — Seva, Bharosa & Suraksha"
+        description="Beyond real estate: Vijaya Developers' community programs across Vijayawada — seva, spiritual activities, trust-building with local villages and safety initiatives."
+        keywords="Vijaya Developers community programs, seva Vijayawada, CSR real estate Vijayawada"
+        path="/programs"
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden flex items-end">
-        <img src={heroOfOurProgramsImg} alt="Our Programs" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroOfOurProgramsImg} alt="Vijaya Developers community programs in Vijayawada" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'rgba(27,36,48,0.65)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 text-white">
           <p className="font-label text-xs uppercase tracking-widest2 text-gradient-light mb-2">More Than Business</p>
