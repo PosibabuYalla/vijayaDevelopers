@@ -14,6 +14,7 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+        <SEO title="Article Not Found" description="This article could not be found." noindex />
         <p className="font-display text-2xl text-charcoal">Article not found.</p>
         <Link to="/blogs" className="text-gradient font-label font-semibold">← Back to Blogs</Link>
       </div>

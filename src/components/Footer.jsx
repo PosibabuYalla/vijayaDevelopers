@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react'
 import { CONTACT, SOCIAL, PROJECTS } from '../data/data'
 import logo from '../assets/logo.png'
-import footerBg from '../assets/footerBg.png'
+import footerBg from '../assets/footerBg.webp'
 
 export default function Footer() {
   return (

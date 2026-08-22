@@ -4,7 +4,7 @@ import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import SEO from '../components/SEO'
 import { IMAGES, CONTACT } from '../data/data'
 import buildingFutureImg from "../assets/Building Vijayawada's future, one plot at a time..webp"
-import heroOfAboutImg from '../assets/heroOfAbout.png'
+import heroOfAboutImg from '../assets/heroOfAbout.webp'
 
 const TIMELINE = [
   { year: '2007', event: 'Founded in Vijayawada with a vision to deliver transparent, DTCP & CRDA-approved real estate.' },

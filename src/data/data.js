@@ -61,7 +61,7 @@ export const PROGRAMS = [
 
 export const CONTACT = {
   address:   '1st Floor, 11th Line, Currency Nagar, Ramavarappadu, Vijayawada, Andhra Pradesh 520008',
-  hours:     'Open 24 Hours',
+  hours:     'Mon–Sat · 9:30 AM – 7:00 PM',
   phone:     '+91 83281 21717',
   tel:       'tel:+918328121717',
   whatsapp:  'https://wa.me/918328121717',

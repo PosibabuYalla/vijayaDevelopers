@@ -113,7 +113,7 @@ export default function Careers() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <ZigzagGallery images={LIFE_GALLERY} columns={3} />
+          <ZigzagGallery images={LIFE_GALLERY} columns={3} label="Life at Vijaya Developers — Vijayawada" />
         </Reveal>
       </section>
 

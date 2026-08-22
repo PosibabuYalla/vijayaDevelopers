@@ -13,7 +13,7 @@ import { CONTACT, PROJECTS, PRICING, PROGRAMS } from '../data/data'
 import villaExteriorImg from '../assets/HeroPageImages/Ram Architects.jpeg'
 import openPlotLayoutImg from '../assets/HeroPageImages/Vijaya Developers open Plot.jpeg'
 import townhomesDuskImg from '../assets/HeroPageImages/Ra, Architects.jpeg'
-import heroImg from '../assets/heroImg.png'
+import heroImg from '../assets/heroImg.webp'
 import brochurePdf from '../assets/VijayaDevelopersBroucher.pdf'
 
 const HERO_HIGHLIGHTS = [

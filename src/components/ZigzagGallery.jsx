@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ImageLightbox from './ImageLightbox'
 
-export default function ZigzagGallery({ images, columns = 2 }) {
+export default function ZigzagGallery({ images, columns = 2, label = 'Vijaya Developers' }) {
   const [openIndex, setOpenIndex] = useState(null)
 
   const cols = Array.from({ length: columns }, () => [])
@@ -23,7 +23,7 @@ export default function ZigzagGallery({ images, columns = 2 }) {
               >
                 <img
                   src={src}
-                  alt={`Photo ${i + 1}`}
+                  alt={`${label} — photo ${i + 1}`}
                   loading="lazy"
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />

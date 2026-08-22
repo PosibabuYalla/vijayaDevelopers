@@ -10,6 +10,7 @@ import Gallery from './pages/Gallery'
 import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

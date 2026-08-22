@@ -29,6 +29,7 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+        <SEO title="Project Not Found" description="This project could not be found." noindex />
         <p className="font-display text-2xl text-charcoal">Project not found.</p>
         <Link to="/projects" className="text-gradient font-label font-semibold">← Back to Projects</Link>
       </div>

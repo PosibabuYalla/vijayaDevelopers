@@ -94,7 +94,7 @@ export default function Gallery() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">{s.title}</h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <ZigzagGallery images={s.images} columns={s.columns} />
+            <ZigzagGallery images={s.images} columns={s.columns} label={`Vijaya Developers ${s.title} — Vijayawada`} />
           </Reveal>
         </section>
       ))}
