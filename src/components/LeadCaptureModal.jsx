@@ -46,12 +46,17 @@ export default function LeadCaptureModal() {
       })
       const data = await res.json().catch(() => null)
       if (!res.ok || !data || data.success === false || data.success === 'false') {
-        throw new Error('Submission failed')
+        console.error('FormSubmit error response:', data)
+        throw new Error(data?.message || 'Submission failed')
       }
       sessionStorage.setItem(SESSION_KEY, 'true')
       setSubmitted(true)
-    } catch {
-      setError('Something went wrong. Please try again or call/WhatsApp us directly.')
+    } catch (err) {
+      setError(
+        err.message && err.message !== 'Submission failed'
+          ? err.message
+          : 'Something went wrong. Please try again or call/WhatsApp us directly.'
+      )
     } finally {
       setSubmitting(false)
     }

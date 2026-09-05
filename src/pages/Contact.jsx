@@ -33,12 +33,17 @@ export default function Contact() {
       })
       const data = await res.json().catch(() => null)
       if (!res.ok || !data || data.success === false || data.success === 'false') {
-        throw new Error('Submission failed')
+        console.error('FormSubmit error response:', data)
+        throw new Error(data?.message || 'Submission failed')
       }
       setSubmitted(true)
       setForm({ name: '', phone: '', email: '', interest: '', message: '' })
-    } catch {
-      setError(true)
+    } catch (err) {
+      setError(
+        err.message && err.message !== 'Submission failed'
+          ? err.message
+          : 'Something went wrong sending your enquiry. Please try again, or call/WhatsApp us directly.'
+      )
     } finally {
       setSubmitting(false)
     }
@@ -163,7 +168,7 @@ export default function Contact() {
                     </div>
                     {error && (
                       <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-                        Something went wrong sending your enquiry. Please try again, or call/WhatsApp us directly.
+                        {error}
                       </p>
                     )}
                     <button
