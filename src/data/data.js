@@ -69,7 +69,7 @@ export const CONTACT = {
 }
 
 export const SOCIAL = {
-  facebook:  'https://www.facebook.com/share/1DSzUtsu9e/',
+  facebook:  'https://www.facebook.com/share/14uGaDH2o4r/',
   youtube:   'https://youtube.com/@vijayawadavijayadevelopers?si=UAurl3Fvl_LJdUN9',
   instagram: 'https://www.instagram.com/vijayadevelopers5',
 }
