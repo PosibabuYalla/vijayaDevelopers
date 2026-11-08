@@ -1,98 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
   <url>
-    <loc>https://vijayadeveloper.com/</loc>
+    <loc>https://vijayadeveloper.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/about</loc>
+    <loc>https://vijayadeveloper.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/projects</loc>
+    <loc>https://vijayadeveloper.in/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/projects/luxury-villas-kesarapalli-gannavaram</loc>
+    <loc>https://vijayadeveloper.in/projects/luxury-villas-kesarapalli-gannavaram</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/projects/premium-villas-Kesarapalli</loc>
+    <loc>https://vijayadeveloper.in/projects/premium-villas-Kesarapalli</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/projects/premium-open-plots-gandigunta-village</loc>
+    <loc>https://vijayadeveloper.in/projects/premium-open-plots-gandigunta-village</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/projects/premium-open-plots-kondapavuluru-village</loc>
+    <loc>https://vijayadeveloper.in/projects/premium-open-plots-kondapavuluru-village</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/projects/vijaya-spring-fields</loc>
+    <loc>https://vijayadeveloper.in/projects/vijaya-spring-fields</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/programs</loc>
+    <loc>https://vijayadeveloper.in/programs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/careers</loc>
+    <loc>https://vijayadeveloper.in/careers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/gallery</loc>
+    <loc>https://vijayadeveloper.in/gallery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs</loc>
+    <loc>https://vijayadeveloper.in/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Existing blog posts -->
+  <url>
+    <loc>https://vijayadeveloper.in/blogs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs/why-dtcp-crda-approval-matters</loc>
+    <loc>https://vijayadeveloper.in/blogs/why-dtcp-crda-approval-matters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs/vijayawada-investment-hub</loc>
+    <loc>https://vijayadeveloper.in/blogs/vijayawada-investment-hub</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs/open-plot-vs-villa</loc>
+    <loc>https://vijayadeveloper.in/blogs/open-plot-vs-villa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs/property-registration-guide</loc>
+    <loc>https://vijayadeveloper.in/blogs/property-registration-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs/bank-loan-for-plot-purchase</loc>
+    <loc>https://vijayadeveloper.in/blogs/bank-loan-for-plot-purchase</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vijayadeveloper.com/blogs/gated-community-amenities-checklist</loc>
+    <loc>https://vijayadeveloper.in/blogs/gated-community-amenities-checklist</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- SEO-targeted blog routes -->
   <url>
-    <loc>https://vijayadeveloper.com/contact</loc>
+    <loc>https://vijayadeveloper.in/blog/open-plots-in-vijayawada</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vijayadeveloper.in/blog/properties-near-vijayawada-airport</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vijayadeveloper.in/blog/crda-rera-approved-plots-vijayawada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vijayadeveloper.in/blog/plots-for-sale-in-gannavaram-kesarapalli</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Commercial landing pages -->
+  <url>
+    <loc>https://vijayadeveloper.in/open-plots-in-vijayawada</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vijayadeveloper.in/properties-in-vijayawada</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vijayadeveloper.in/properties-near-vijayawada-airport</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

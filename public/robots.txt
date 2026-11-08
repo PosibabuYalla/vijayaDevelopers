@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /dist/
 
-Sitemap: https://vijayadeveloper.com/sitemap.xml
+Sitemap: https://vijayadeveloper.in/sitemap.xml

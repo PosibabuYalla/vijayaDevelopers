@@ -6,13 +6,16 @@ import FloatingContact from './FloatingContact'
 import LeadCaptureModal from './LeadCaptureModal'
 import { PROJECTS, BLOGS } from '../data/data'
 
-const STATIC_PATHS = ['/', '/about', '/projects', '/programs', '/careers', '/gallery', '/blogs', '/contact']
+const STATIC_PATHS = [
+  '/', '/about', '/projects', '/programs', '/careers', '/gallery', '/blogs', '/contact',
+  '/open-plots-in-vijayawada', '/properties-in-vijayawada', '/properties-near-vijayawada-airport',
+]
 
 function isKnownRoute(pathname) {
   if (STATIC_PATHS.includes(pathname)) return true
   const projectMatch = pathname.match(/^\/projects\/([^/]+)$/)
   if (projectMatch) return PROJECTS.some((p) => p.slug === projectMatch[1])
-  const blogMatch = pathname.match(/^\/blogs\/([^/]+)$/)
+  const blogMatch = pathname.match(/^\/blogs?\/([^/]+)$/)
   if (blogMatch) return BLOGS.some((b) => b.slug === blogMatch[1])
   return false
 }

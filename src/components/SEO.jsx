@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
 const SITE_NAME = 'Vijaya Developers'
-const SITE_URL = 'https://vijayadeveloper.com'
+const SITE_URL = 'https://vijayadeveloper.in'
 const DEFAULT_IMAGE = `${SITE_URL}/logo.png`
 
 export default function SEO({ title, description, path = '/', image, keywords, jsonLd, noindex = false }) {

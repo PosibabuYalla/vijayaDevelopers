@@ -11,6 +11,9 @@ import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import OpenPlotsVijayawada from './pages/OpenPlotsVijayawada'
+import PropertiesVijayawada from './pages/PropertiesVijayawada'
+import PropertiesAirport from './pages/PropertiesAirport'
 
 export default function App() {
   return (
@@ -26,7 +29,13 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
+          {/* SEO-targeted blog routes with /blog/ prefix */}
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Commercial landing pages */}
+          <Route path="/open-plots-in-vijayawada" element={<OpenPlotsVijayawada />} />
+          <Route path="/properties-in-vijayawada" element={<PropertiesVijayawada />} />
+          <Route path="/properties-near-vijayawada-airport" element={<PropertiesAirport />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

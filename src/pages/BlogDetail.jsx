@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { ArrowLeft, Phone, MessageCircle } from 'lucide-react'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import SEO, { SITE_URL } from '../components/SEO'
@@ -9,6 +9,7 @@ const formatDate = (iso) =>
 
 export default function BlogDetail() {
   const { slug } = useParams()
+  const { pathname } = useLocation()
   const post = BLOGS.find((b) => b.slug === slug)
 
   if (!post) {
@@ -35,7 +36,7 @@ export default function BlogDetail() {
     datePublished: post.date,
     author: { '@type': 'Organization', name: 'Vijaya Developers' },
     publisher: { '@type': 'Organization', name: 'Vijaya Developers', logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` } },
-    mainEntityOfPage: `${SITE_URL}/blogs/${post.slug}`,
+    mainEntityOfPage: `${SITE_URL}${pathname}`,
   }
 
   const breadcrumbSchema = {
@@ -43,8 +44,8 @@ export default function BlogDetail() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Blogs', item: `${SITE_URL}/blogs` },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blogs/${post.slug}` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blogs` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}${pathname}` },
     ],
   }
 
@@ -54,7 +55,7 @@ export default function BlogDetail() {
         title={post.title}
         description={post.excerpt}
         keywords={`${post.category}, Vijayawada real estate, ${post.title}`}
-        path={`/blogs/${post.slug}`}
+        path={pathname}
         image={absoluteImg}
         jsonLd={[articleSchema, breadcrumbSchema]}
       />
